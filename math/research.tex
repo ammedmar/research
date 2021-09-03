@@ -1,4 +1,4 @@
-\documentclass{amsart}
+\documentclass[9pt]{amsart}
 \include{aux/style}
 \include{aux/usualcmds}
 \include{aux/commands}
@@ -14,8 +14,11 @@
 \include{aux/figures}
 
 \begin{document}
+	\vspace*{-1cm}
 	\input{aux/abstract}
 	\maketitle
+	\vspace*{-.5cm}
+	\thispagestyle{empty}
 	\input{sec/introduction}
 	\input{sec/section}
 	\printbibliography
