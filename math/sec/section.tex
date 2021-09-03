@@ -1,0 +1,201 @@
+
+\section{An axiomatic characterization of Steenrod's cup-$i$ products}
+
+In this section we survey the main result of \cite{medina2018axiomatic}. It states that any collection of higher products realizing the derived commutativity of the cohomology algebra is isomorphic to Steenrod's original cup-$i$ products if it is natural, minimal, non-degenerate, and free.
+
+Let $\Sigma_2$ be the group with one non-identity element $T$ and let
+\begin{equation} \label{equation: definition of W}
+W = \big( \Ftwo[\Sigma_2] \stackrel{1+T}{\longleftarrow} \Ftwo[\Sigma_2] \stackrel{1+T}{\longleftarrow} \cdots \big)
+\end{equation}
+be the minimal free resolution of $\Ftwo$ as an $\Ftwo[\Sigma_2]$-module. We denote the preferred element in degree $i$ by $e_i$.
+
+A \textbf{symmetric product} on a differential graded $\Ftwo$-module $C$ is a chain map
+\begin{equation*}
+W \tensor_{\Sigma_2} C^{\tensor 2} \to C
+\end{equation*}
+where $T$ acts by multiplication on $W$ and by transposition on $C \tensor C$. We denote the image of $[e_i \tensor \alpha \tensor \beta]$ by $\alpha \smallsmile_i \beta$.
+
+A \textbf{symmetric product construction} is a symmetric product on each $N^*(X; \Ftwo)$, where $X$ is a simplicial set, that is natural with respect to simplicial maps. An \textbf{isomorphism} of symmetric product constructions is an automorphism $\phi$ of $W$ making the diagram
+\begin{center}
+	\begin{tikzcd}
+	W \displaytensor_{\Sigma_2} N^*(X; \Ftwo) \arrow[dr, in=180, out=-90] \arrow[r, "\phi \tensor \id"] & W \displaytensor_{\Sigma_2} N^*(X; \Ftwo) \arrow[d] \\
+	& N^*(X; \Ftwo)
+	\end{tikzcd}
+\end{center}
+commute for every simplicial set $X$.
+
+The first axiom alluded to in the beginning of the section, naturality, has been explicitly absorbed into our definition of symmetric product construction; whereas the second, minimality, is manifested in the definition of symmetric product via the use of $W$. Let us introduce the other two axioms whose definitions reference $N^*(\simplex^d; \Ftwo)$, the normalized cochains on the representable simplicial sets.
+
+We say a symmetric product construction is \textbf{non-degenerate} if for any basis element $\sigma = [v_0, \dots, v_i]$
+\begin{equation*}
+\boxed{\sigma^* \smallsmile_{i} \sigma^* \neq 0}
+\end{equation*}
+and we say it is \textbf{free} if for any pair of basis elements $\sigma_j = [v_0, \dots, v_{n_j}]$ for $j = 1, 2$
+\begin{equation*}
+\boxed{\sigma^*_1 \smallsmile_{i} \sigma^*_2 = \sigma^*_2 \smallsmile_{i} \sigma^*_1}\
+\Longrightarrow\
+\boxed{\sigma^*_1 \smallsmile_{i} \sigma^*_2 = 0}
+\end{equation*}
+whenever $i \neq n_1$ or $i \neq n_2$.
+
+\begin{theorem} [\cite{medina2018axiomatic}]
+	Up to isomorphism, Steenrod's original cup-$i$ construction \cite{steenrod1947products} is the only free non-degenerate symmetric product construction.
+\end{theorem}
+
+We will provide evidence for the fundamental nature of this construction in the next section by relating it to the nerve of higher-dimensional categories.
+
+\section{Cup-$i$ products and the nerve of higher categories}
+
+Roberts \cite{roberts1977mathematical} pioneered the idea of using higher-dimensional categories as the coefficient objects for non-abelian cohomology. A key ingredient for this enterprise is the construction of a nerve functor from \mbox{$n$-categories} to simplicial sets. Such a functor can be obtained from an $n$-category $\mathcal{O}_n$ naturally assigned to each object $[n]$ in the simplex category $\simplex$. The construction of these $\mathcal O_n$ was accomplished by Street in \cite{street1987orientals} where he regards them as ``fundamental structures of nature".
+
+Recall from (\ref{equation: definition of W}) the definition of $W$, the minimal free resolution of $\Ftwo$ as an $\Ftwo[\Sigma_2]$-module. A \textbf{counital cosymmetric coalgebra} is an augmented differential graded module $(C, \varepsilon)$ together with
+\begin{equation*}
+\Delta : W \otimes C \to C \otimes C
+\end{equation*}
+an $\Ftwo[\Sigma_2]$-linear chain map for which $\varepsilon$ acts as a counit. We denote $\Delta(e_i \tensor c)$ by $\Delta_i(c)$.
+
+We call $c \in C_n$ a \textbf{group-like element} if for any integer $k$ we have
+\begin{equation*}
+\Delta_k (c) \in C_{\leq n} \otimes C_{\leq n}
+\end{equation*}
+\begin{equation*}
+\Delta_n(c) = c \otimes c
+\end{equation*}
+and, when $n = 0$,
+\begin{equation*}
+\varepsilon(c) = 1.
+\end{equation*}
+
+We say that $\big( C, \Delta , \varepsilon \big)$ is \textbf{group-like} if it admits a basis of group-like elements.
+
+The chains of a simplicial set are equipped with a group-like counital cosymmetric coalgebra structure corresponding to Steenrod's cup-$i$ products
+\begin{equation*}
+(\alpha \smallsmile_{i} \beta)(c) = (\alpha \tensor \beta)\Delta_i(c).
+\end{equation*}
+With respect to this structure we have the following
+\begin{theorem} [\cite{medina2020globular}]
+	There exists a functor from group-like counital cosymmetric coalgebra to $n$-categories sending the chains on the standard $n$-simplex to $\mathcal O_n$.
+\end{theorem}
+
+The definition of this functor is similar to those used by Street, Brown, and Steiner in their respective studies of parity complexes \cite{street1991parity}, linear $\omega$-categories \cite{brown2003cubical}, and augmented directed complexes \cite{steiner2004omega}.
+
+\section{An effective proof of the Cartan and Adem relations}
+
+The celebrated square operations of Steenrod
+\begin{equation*}
+Sq^k : H^*(X; \mathbb F_2) \to H^*(X; \mathbb F_2)
+\end{equation*}
+are defined for a cohomology class $[\alpha] \in H^{-n}(X;\Ftwo)$ by
+\begin{equation} \label{equation: definition of squares in terms of cups}
+Sq^k\big([\alpha]\big) = [\alpha \smallsmile_{k-n} \alpha].
+\end{equation}
+The axioms for the cup-$i$ products I presented in \cite{medina2018axiomatic} are inspired by the axioms of the square operations described in \cite{steenrod1962cohomology}
+\begin{enumerate}
+	\item $Sq^k$ is natural,
+	\item $Sq^0$ is the identity,
+	\item $Sq^k(x) = x^2$ for $x \in H^{-k}(X; \mathbb F_2)$,
+	\item $Sq^k(x) = 0$ for $x \in H^{-n}(X; \mathbb F_2)$ with $n>k$,
+	\item $Sq^k(xy) = \sum_{i+j=k} Sq^i (x) Sq^j(y)$.
+\end{enumerate}
+Axiom 5), known as the \textbf{Cartan formula}, is the focus of \cite{medina2020cartan}. Using (\ref{equation: definition of squares in terms of cups}), this formula is equivalent to
+\begin{equation*}
+0 =
+\Big[ (\alpha \smallsmile_0 \beta) \smallsmile_i (\alpha \smallsmile_0 \beta)\ +
+\sum_{i=j+k} (\alpha \smallsmile_j \alpha) \smallsmile_0 (\beta \smallsmile_k \beta) \Big].
+\end{equation*}
+In \cite{medina2020cartan}, I constructed effectively for any $i \geq 0$ and cocycles $\alpha, \beta \in N^*(X; \mathbb F_2)$ a natural cochain $\zeta_i(\alpha, \beta)$ such that
+\begin{equation*}
+\delta \zeta_i(\alpha, \beta) =
+(\alpha \smallsmile_0 \beta) \smallsmile_i (\alpha \smallsmile_0 \beta)\ + \sum_{i=j+k} (\alpha \smallsmile_j \alpha) \smallsmile_0 (\beta \smallsmile_k \beta).
+\end{equation*}
+
+Similarly, one could try to produce these cochains for the Adem relations
+\begin{equation*}
+Sq^i Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} {j-k-1 \choose i-2k} Sq^{i+j-k} Sq^k(\alpha).
+\end{equation*}
+New ideas are required for this, and it was carried through in \cite{medina2021adem} as joint work with G. Brumfiel and J. Morgan.
+
+\section{Persistence Steenrod modules}
+
+Persistence (co)homology is one of the main tools in the rapidly developing field of topological data analysis. A motivating example for this technique is the study of discrete sets equipped with a metric, for example a point cloud of data inside euclidean space. From it, we can construct a sequence of nested simplicial complexes
+\begin{equation*}
+X_1 \to X_2 \to \cdots \to X_n
+\end{equation*}
+and the naturality of the cohomology functor provides us with a sequence
+\begin{equation} \label{equation: mantequilla}
+H^\bullet(X_1; \Bbbk) \leftarrow H^\bullet(X_2; \Bbbk) \leftarrow \cdots \leftarrow H^\bullet(X_n; \Bbbk).
+\end{equation}
+Persistence cohomology focuses on the way the ranks of these vector spaces fit together. More specifically, it identifies Betti numbers that are shared by many consecutive simplicial complexes. These are regarded as topological features of the discrete metric space which are robust with respect to perturbations and noise.
+
+When $\Bbbk$ is the field with two elements $\Ftwo$ the sequence $(\ref{equation: mantequilla})$ is equipped with a natural action of the Steenrod squares on each graded vector space. This action can detect finer information beyond the Betti numbers. The main contribution I made in \cite{medina2018persistence} is the development of the algorithms necessary to use this extra information in topological data analysis.
+
+I am working in collaboration with the rest of \texttt{giotto-tda}'s development team to incorporate a high-performance version of my algorithms into our toolkit \cite{medina2021giotto}.
+
+\section{Finitely presented $E_\infty$-PROPs}
+
+A purposeful construction of a model for the $E_\infty$-operad is central in most contexts where commutativity up-to-coherent-homotopies plays a role. So far we have focused on the arity 2 part of an $E_\infty$-coalgebra on the chains of simplicial and globular sets. I will effectively describe in this section the entirety of this structure using a novel model introduced in \cite{medina2020prop1}. The advantage of this over previous models \cite{berger2004combinatorial, mcclure2003multivariable, kriz1995operads} is that it can be described in terms of finitely many generators and relations.
+
+To illustrate PROPs and operads, the theory of groups serves as a useful analogy. Let $V$ be a vector space or more generaly a module. Composition in $\mathrm{Aut}(V)$ defines a group structure, and homomorphisms from an abstract group to $\mathrm{Aut}(V)$ define representations. We can consider the composition structure of $\mathrm{End}(V) = \bigoplus_{m,n \geq 0} \mathrm{Hom}(V^{\tensor m}, V^{\tensor n})$ together with the permutation actions of $\Sigma_n$ and $\Sigma_m$. The resulting structure gives rise to the notion of PROP and when restricted to $m = 1$ or $n = 1$ to that of an operad. We use the same notation $\mathrm{End}$ for these three different constructions. Structure preserving morphisms from an abstract PROP or operad to $\mathrm{End}(V)$ define respectively the notions of PROP bialgebra or operad (co)algebra.
+In a similar way to how groups can be defined in terms of generators and relations, we can define a presentation of an abstract PROP. For complete details in the operad case see \cite{loday2012operads}.
+
+\begin{definition}[\cite{medina2020prop1}]
+	Let $\mathcal M$ be the PROP generated by
+	$$\counit \in \mathcal S(1,0)_0\hspace*{.6cm}\coproduct \in \mathcal S(1,2)_0\hspace*{.6cm} \product \in \mathcal S(2,1)_1$$
+	with differential $$\partial\ \counit=0\hspace*{.6cm}\partial\ \coproduct=0\hspace*{.6cm}\partial\ \product=\ \boundary$$
+	and restricted by the relations $$\productcounit\hspace*{.6cm}\leftcounitality\hspace*{.6cm}\rightcounitality$$
+\end{definition}
+
+\begin{theorem} [\cite{medina2020prop1}]
+	One of the operads associated to $\mathcal M$ is an $E_\infty$-operad.
+\end{theorem}
+
+I used this finitely presented PROP to describe an $E_\infty$-coalgebra structure on the chains of any simplicial set induced by only three operations: the Alexander-Whitney diagonal, the augmentation map, and an algebraic version of the join of simplices. Additionally, I showed that the operad associated to a finitely presented quotient of $\mathcal M$ is isomorphic up to signs to the Surjection operad of McClure-Smith \cite{mcclure2003multivariable} and Berger-Fresse \cite{berger2004combinatorial}. In \cite{medina2018prop2}, I constructed a PROP in the category of CW-spaces whose cellular chains are isomorphic to $\mathcal M$ and used it to prove a conjecture of Kaufmann, Remark 4.11. of \cite{kaufmann2009dimension}, establishing an isomorphism between the chains of an arc operad and the Surjection operad.
+
+\section{Chain level Steenrod operations}
+In \cite{medina2020maysteenrod}, using an operadic viewpoint, we provide a generalization of the cup-$i$ products to all Steenrod operations \cite{steenrod1962cohomology}. Let $\mathrm C_r$ be the cyclic group of order $r$ and $\mathrm C$ be the groupoid obtained by disjoint union of all the $\mathrm C_r$. The core construction in our paper is a \textit{Steenrod-Adem structure} on the $E_\infty$-operad associated to my PROP $\mathcal M$, that is to say, a morphism of $\mathrm C$-modules to it from $\mathcal W$, the $\mathrm C$-module defined by letting $\mathcal W(r)$ be the minimal resolution of $\Z/r\Z$ as a trivial $(\Z/r\Z)[\mathrm C_r]$-module. We also construct Steenrod-Adem structures on the Barratt-Eccles and surjections operad, an natural Steenrod-Adem structures on the normalized chains of simplicial and cubical sets.
+
+%compare with Figure \ref{fig:bigsummary}.
+
+%\begin{figure}
+%	\begin{tikzcd}
+%	& & & U(\mathcal M) \arrow[dddr, bend left=10, "\phi^\triangle"'] \arrow[dddrr, bend left=20, "\phi^\square"'] & & \\
+%	& & \mathcal X \arrow[ru, "SL"] & & & \\
+%	& \mathcal E \arrow[ur, "TR"] & & & & \\
+%	\mathcal W \arrow[rrrr, "\psi^\triangle", bend right=10] \arrow[rrrrr, "\psi^\square", bend right=20] \arrow[ur, "\psi_{\mathcal E}"] \arrow[uurr, "\psi_{\mathcal X}"', bend right=35, pos=.6] \arrow[uuurrr, "\psi_{U(\mathcal M)}"', bend right=45, pos=0.6] & & & & \mathrm{End}_{N^\bullet(X)} & \mathrm{End}_{N^\bullet(X)}
+%	\end{tikzcd}
+%	\caption{Steenrod-Adem structures on the Barratt-Eccles $\mathcal E$, surjection $\mathcal X$, and $U_2(\mathcal M)$ operads, and natural Steenrod-Adem structures on the normalized chains of simplicial and cubical sets.}
+%	\label{fig:bigsummary}
+%\end{figure}
+
+\section{Open-source projects}
+
+\subsection{\texttt{giotto-tda}} As a result of a collaborative effort between L2F SA, the Laboratory for Topology and Neuroscience at EPFL, and the Institute of Reconfigurable Embedded Digital Systems (REDS) of HEIG-VD, we developed \texttt{giotto-tda}, a \texttt{Python} library that integrates high-performance topological data analysis with machine learning via a \emph{scikit-learn}--compatible API and state-of-the-art \texttt{C++} implementations \cite{medina2021giotto}. The team, lead by Kathryn Hess, consists of machine learning practitioners, mathematicians and experts on high-performance computing. The PyPI package is downloaded 350 times per month and the library appears in \emph{scikit-learn}'s curated list of related projects. The paper has been accepted to the Journal of Machine Learning Research and was presented during NeuRIPS 2020.
+
+\subsection{\texttt{ComCH}} Commutativity up-to-coherent-homotopies plays a crucial role in the study of configuration spaces. The topological operad of little cubes is homotopy equivalent to these spaces, and can be effectively represented in the category of chain complexes, with its compositional structure, by filtrations on the Barratt-Eccles and surjection operads. I implemented these models as part of \texttt{ComCH}, computer algebra system written in \texttt{Python} for the study of commutativity up-to-coherent-homotopies, where I also implemented the novel constructions introduced in \cite{medina2020maysteenrod} related to the homology of symmetric groups.
+
+\section{Information theory and harmonic analysis}
+
+Network representations often cannot fully account for the structural richness of complex systems spanning multiple levels of organization. Recently proposed high-order information-theoretic signals are well-suited to capture synergistic phenomena that transcend pairwise interactions; however, the exponential-growth of their cardinality severely hinders their applicability. In \cite{medina2021hyperharmonic}, a paper in which I am the first author, we combined methods from harmonic analysis and combinatorial topology to construct efficient representations of high-order information-theoretic signals.
+The core of our method is the diagonalization of a discrete version of the Laplace-de Rham operator, that geometrically encodes structural properties of the system. We capitalize these ideas by developing a complete workflow for the construction of hyperharmonic representations of high-order signals, which is applicable to a wide range of scenarios. As a proof of concept, we illustrated our approach  analyzing the musical scores of the latter symphonies written by F.J. Hadyn, where our results demonstrate the far superior dimensionality-reduction capabilities of our method compared to other representations.
+
+\section{Future work}
+
+\subsection{Topology and deep learning} Topology can complement traditional approaches to machine learning and data analysis by providing global summaries of complex relational structures. The added information is model-independent and highly resistant to noise. Designing reliable AI systems is a multi-faceted challenge and we will use topology to tackle the following core aspects of the problem:
+
+\begin{itemize}
+	\item Robustness to noise and adversarial attacks: deep learning models are surprisingly susceptible to small perturbations, and this can lead to unexpected failures in deployed systems.
+
+	\item Generalisability to unseen data: large models can overfit the data they are trained on and thus fail to generalise to data in deployment.
+\end{itemize}
+
+Traditional regularizers, one of the primary tools used to tackle the above challenges, impose penalties on representations that exhibit undesirable properties such as exploding gradients or highly complicated geometric structures. By studying the topology of the weight space and decision boundaries of trained models, we will validate on real world data the assumption that robustness is linked to less cumbersome topologies. This will enable us to create performant topological regularizers that improve the resilience and generalization power of new models.
+
+\subsection{Dyer-Lashof operations} Configuration space of $r$ points in $\mathbb R^n$ are central objects of study in topology related to the theories of loop spaces, deformations, and knots, to name just a few theoretical examples. Recently, they have also found applications in motion planning and robotics through the concept of topological complexity \cite{farber2003topological, ghrist2010configuration}. The homology of these spaces define is a crucial invariant and in joint work with R. Kaufmann and P. Salvatore, we are identifying chain level representatives for these classes on models for the $E_n$-operads filtering the surjection and Barratt-Eccles operads. This work extends constructions in the $E_\infty$-case introduced in our paper \cite{medina2020maysteenrod}.
+
+\subsection{Manifold intersections} The relationship between manifold topology and cohomology operations has a long history  masterfully summarized in \cite{milnor2016characteristic}. In joint work currently being finalized with D. Sinha and G. Friedman, we extend the relationship between intersection of submanifolds and cup product to the cochain level, introducing a canonical vector field on a cubilation of the manifold that flows the partially defined commutative product on submanifold cochains to Serre's product on cubical cochains, a product that it is commutative only up to coherent homotopies but everywhere defined.
+
+\subsection{Representation and cohomology of categories} The theory of representations and cohomology of groups can be recasted in terms of (Hopf) algebras associated with the groups. Many of the results in this theory extend naturally to quivers and (small) categories but not all. In particular, some important functoriality properties are lost in all current generalizations from groups to categories. In work to appear, I argue that to prevent this loss one should consider the $E_2$-coalgebra structure carried by the chains on the nerve of the category. When the category is a group, this corresponds to considering the $E_2$-coalgebra structure on the bar construction of the group algebra.
+
+\subsection{$E_\infty$-algebras and L-theory} With Manuel Rivera and Mahmoud Zeinalian we expect to combine the algebraic structures describing homotopy types \cite{sullivan1977infinitesimal, mandell2001padic} and those developed by Ranicki \cite{ranicki1992topological}  for the classification of topological manifold structures. Substantial partial results in this direction can be found in their paper \cite{rivera2019functor} and my thesis.
+
+\subsection{Dualities in persistence theory} The classification theorem in persistence homology, a central concept of the field, introduces the barcode as a complete invariant of these objects. In \cite{de2011dualities}, the authors prove using the cells of a CW-filtration a duality result between the barcodes of persistence homology and persistence relative cohomology. I am writing a paper where I extend this result to a purely algebraic statement that also covers the case of persistence modules equipped with an endomorphism. Examples where this endomorphisms appear naturaly is the case of persistence Steenrod modules which I introduced in \cite{medina2018persistence}, and that of Floer-type persistence modules  coming  from  the  intersection  product  with  classes  in  the  ambient (quantum) homology \cite{polterovich2017persistence}.
