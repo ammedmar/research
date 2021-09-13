@@ -1,0 +1,72 @@
+
+\section{Future work}
+
+\subsection{Foundations of geometric (co)homology}
+
+The use of manifold-like objects to represent (co)homology classes has a long history and many technical subtleties.
+In \cite{medina2021foundations}, with G. Friedman and D. Sinha we further develop one such theory for smooth manifolds based on maps from manifolds with corners.
+As an application of these foundations, we expect to extend our work relating transverse intersection and the cup product of cubical cochains (\cref{ss:flows}) to an entire $E_\infty$-structure.
+More explicitly, we expect to introduce further coherent vector fields to model geometrically the $E_\infty$-structure defined in \cite{medina2021cubical}.
+
+\subsection{Steenrod operations and Khovanov homology}
+
+In work being finalized, with Federico Cantero-Mor\'{a}n we introduced a description of Steenrod operations at the simplicial cochain level that is dual to the one given in \cite{medina2020maysteenrod}.
+There are two sources of motivation for this.
+On one hand, for applications in persistent homology or computational topology more broadly, this description lends itself to a much faster algorithmic implementation, analogous to how the description in \cite{medina2021newformulas} of cup-$i$ products improved the performance of Steenrod square computations.
+On the other, this dual description is applicable in more generality.
+For example, the dual description of \cite{medina2021newformulas} was used by Cantero-Mor\'{a}n to define Steenrod squares on Khovanov homology, and we expect to define Steenrod operations at odd primes using our new description.
+
+\subsection{Cochain level secondary operations}
+
+Building on the work described in \cref{ss:cartan} and \cref{ss:adem} that constructs cochain level representatives enforcing the Cartan and Adem relations, we expect, using the formulas of \cite{medina2020maysteenrod}, to extend these constructions to all primes.
+Effectively constructing cochains enforcing these relations and capable of representing secondary operations at the cochain level.
+
+\subsection{Dyer-Lashof operations}
+
+Configuration space of $r$ points in $\mathbb R^n$ are objects of central topological interest related to loop spaces, knots, and deformation theory.
+Recently, they have also found applications in motion planning and robotics through the concept of topological complexity \cite{farber2003motion.planning}.
+The homology of these spaces is a crucial invariant and we expect to identify chain level representatives for these classes on combinatorial models of the $E_n$-operads.
+This work extends constructions in the $E_\infty$ case discussed in \cref{ss:may steenrod}.
+
+\subsection{Representation and cohomology of categories}
+
+The theory of representations and cohomology of groups can be recasted in terms of (Hopf) group rings.
+Many of the results in this theory extend naturally to quivers and (small) categories but not all.
+In particular, some important functoriality properties are lost in all current generalizations from groups to categories.
+In work to appear, I argue that to prevent this loss one should consider the $E_2$-coalgebra structure carried by the chains on the nerve of the category.
+When the category is a group, this corresponds to considering the $E_2$-coalgebra structure on the bar construction of the group algebra.
+
+\subsection{Topology and deep learning}
+
+Building on the work by \texttt{giotto-tda}'s team the following research direction will be pursued.
+Topology can complement traditional approaches to machine learning and data analysis by providing global summaries of complex relational structures.
+The added information is model-independent and highly resistant to noise.
+Designing reliable AI systems is a multi-faceted challenge and topology can be used to tackle the following core aspects of the problem:
+\begin{itemize}
+	\item Robustness to noise and adversarial attacks: deep learning models are surprisingly susceptible to small perturbations, and this can lead to unexpected failures in deployed systems.
+	\item Generalizability to unseen data: large models can overfit the data they are trained on and thus fail to generalize to data in deployment.
+\end{itemize}
+Traditional regularizers, one of the primary tools used to tackle the above challenges, impose penalties on representations that exhibit undesirable properties such as exploding gradients or highly complicated geometric structures.
+By studying the topology of the weight space and decision boundaries of trained models, we will validate on real world data the assumption that robustness is linked to less cumbersome topologies.
+This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
+
+\subsection{$E_\infty$-algebras and L-theory}
+
+With Manuel Rivera and Mahmoud Zeinalian we expect to combine the algebraic structures describing homotopy types \cite{sullivan1977infinitesimal, mandell2001padic} and those developed by Ranicki \cite{ranicki1992topological} for the classification of topological manifold structures.
+Substantial partial results in this direction can be found in their paper \cite{rivera2018rigidification} and my thesis \cite{medina2015thesis}.
+
+\subsection{Rational homotopy theory and $C_\infty$-coalgebras}
+
+After the pioneering work of Quillen \cite{quillen1969rational} and Sullivan \cite{sullivan1977infinitesimal}, it is known that the categories of differential Lie and commutative (co)algebras model the rational homotopy category of spaces under certain finiteness assumptions.
+Finite type is needed for Sullivan's approach whereas 1-connectedness is assumed for Quillen's.
+To obtain a Lie model applicable for connected spaces with no finite type assumption it is desirable to develop a theory of $C_\infty$-coalgebras over $\mathbb{Q}$.
+Using my model of the $E_\infty$ operad I expect to describe such theory in the future.
+
+\subsection{Symmetries of the associahedral diagonal}
+
+Defining cellular diagonals of polytopes is a problem with combinatorial interest.
+In the case of Stasheff associahedra, polytopes controling $A_\infty$-algebras,
+the existence of a diagonal ensures that the category of $A_\infty$-algebras is equipped with a well defined tensor product.
+This structure is key for applications in Heegard-Floer homology and other areas of symplectic geometry via Fukaya categories \cite{lipshitz2020diagonals}.
+
+Using my model of the $E_\infty$-operad, I expect to introduce a family of coherent homotopies correcting the lack of symmetry of the associahedral diagonal and other polytopes of interest.

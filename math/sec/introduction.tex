@@ -2,128 +2,33 @@
 \section{Introduction} \label{s:introduction}
 
 There is a tense trade-off in topology having roots reaching back to the beginning of its modern form.
-This tension can be illustrated with the concept of homology.
+This tension can be illustrated with the concept of cohomology.
 The first approaches, dating back to Poincar\'e, are based on the idea of subdividing a space into simple contractible pieces.
-These elementary shapes generate a free graded module and their spatial relations define the differential used to compute homology.
-This definition makes certain geometric properties of homology, for example excision, fairly clear.
-Yet, it is not easy to show that a continuous map of spaces induces a map between their homologies.
-This functorial property is trivial in Eilenberg's definition of singular homology, where the graded module of a space has a basis given by all continuous maps to it from standard simplices.
-Nevertheless, this uncountably dimensional complex is hard to manipulate concretely and excision is not easy to prove.
-This tension manifests itself in many other important contexts and the trade-off between concreteness and functoriality remains as central today as it was almost a century ago.
+These elementary shapes generate a free graded module and their spatial relations define the differential used to compute cohomology.
+This definition makes certain geometric properties of cohomology, for example excision, fairly clear.
+Yet, it is not easy to show that a continuous map of spaces induces a map between their associated cohomologies.
+The functoriality just alluded to is trivial when defining cohomology in terms of homotopy classes of maps to Eilenberg-Maclane spaces, but this passage to the homotopy category forgets much geometric information and it is not easy to manipulate concretely.
+The tension this example illustrates manifests itself in many other important contexts, and the trade-off between concreteness and functoriality remains as central today as it was almost a century ago.
 
-A unifying goal of my research is to ease the tension between constructibility and functoriality in algebraic topology, by developing hands-on descriptions of concepts defined only abstractly or axiomatically, allowing for the application of some of its key ideas into novel contexts — most notably in applied topology and quantum field theory — where the need to have definitions allowing for effectively computations has gain considerable importance.
-A central concept that I have explored extensively from this viewpoint is commutativity up-to-coherent-homotopies; with applications into category theory, manifold topology, condensed matter physics, and data analysis.
-I will present a short summary of my work in this introduction and use the subsequent sections to expand on these topics.
+A unifying goal of my research is to ease this tension by developing concrete constructions of concepts defined only abstractly or axiomatically, allowing for the application of some of the central ideas of algebraic topology in novel contexts, notably in applied mathematics and lattice field theory.
+A concept I have explored from this viewpoint extensively and for which I have provided applications in category theory, manifold topology, and data analysis is commutativity up to coherent homotopies, a notion I now motivate.
 
-\subsection{Steenrod}
-In the late thirties, Alexander, Whitney, and \v{C}ech defined the ring structure on cohomology, the cup product,
-\begin{equation*}
-[\alpha] [\beta] = [\alpha \smallsmile_{0} \beta]
-\end{equation*}
-using a cochain level construction
-\begin{equation*}
-\smallsmile_0 \, : N^*(X; \mathbb Z) \otimes N^*(X; \mathbb Z) \to N^*(X; \mathbb Z)
-\end{equation*}
-dual to a choice of simplicial chain approximation to the diagonal inclusion.
-Here $N^*(X; \mathbb Z)$ denotes the integral singular cochains of a space $X$.
+A principal goal of algebraic topology, if not its \textit{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the study of topological properties quantitatively.
+I will focus on spaces up to weak homotopy equivalence, where a first example of an algebraization procedure is provided by the functor of simplicial or cubical cochains.
+This construction may be thought of as a linearization of spaces and, as expected, losses much structure.
+For example, the cohomology groups of $\mathbb{C} P^2$ and $S^2 \vee S^4$, the union of a $2$- and a $4$-sphere over a point, are isomorphic despite these spaces not being equivalent.
+More information can be encoded on the quasi-isomorphism type of the cochain complex of a space if equipped with a natural product structure.
+This makes its cohomology into a natural commutative ring.
+In our example, $\mathbb{C} P^2$ and $S^2 \vee S^4$ are indeed distinguished by the cohomology ring.
+However, this invariant has noticeable limitations.
+To see this consider the suspension construction $\Sigma$ illustrated in the case of a circle by:
+\begin{center}
+	\includegraphics[scale=.2]{aux/suspension.pdf}
+\end{center}
+The cohomology ring of the spaces $\Sigma(\mathbb{C} P^2)$ and $\Sigma(S^2 \vee S^4)$ are isomorphic, so further structure is required on cohomology to distinguish them.
+This is provided by Steenrod operations in the mod $p$ cohomology of spaces, which together with the bockstein homomorphism provide a complete description of the mod $p$ cohomology functor.
+To define said operations, one constructs a coherent family of homotopies correcting the broken commutativity of the cochain level product.
+The existence of such ``derived commutativity'' structure can be argued indirectly, but this provides no concrete method for computation of the associated invariants, and misses the rich geometric and combinatorial structure that an effective construction provides.
 
-Steenrod \cite{steenrod1947products} then showed that the broken symmetry of $\smallsmile_0$ can be homotopically corrected by effectively constructing products
-\begin{equation*}
-\smallsmile_i\, : N^*(X; \mathbb Z) \otimes N^*(X; \mathbb Z) \to N^*(X; \mathbb Z)
-\end{equation*}
-realizing its ``derived commutativity".
-These higher order products lead to the cohomology operations
-\begin{equation*}
-Sq^k : H^*(X; \Ftwo) \to H^{*}(X; \Ftwo)
-\end{equation*}
-that lie at the heart of stable homotopy theory.
-
-\subsection{Axioms}
-Steenrod's cup-$i$ formulae have been recovered many times \cite{gonzalez-diaz1999steenrod, mcclure2003multivariable, berger2004combinatorial, medina2020prop1} in different guises and there are deep reasons for this.
-In \cite{medina2018axiomatic}, I showed that similarly to how Steenrod's $Sq^k$ can be characterized axiomatically \cite{steenrod1962cohomology}, any collection of higher products realizing the ``derived commutativity" of the cohomology algebra is isomorphic to Steenrod's if it is natural, minimal, non-degenerate, and free.
-
-\subsection{Higher-categories}
-The ubiquitous nature of these formulae comes from their intrinsic grounding in the combinatorics of simplices.
-The next result shows this by deriving from the cup-$i$ products another fundamental construction: the nerve of a higher-category \cite{street1987orientals}.
-
-A $0$-category is a set and an $(n+1)$-category is a category enriched over $n$-categories.
-In \cite{medina2020globular}, I constructed a functor from coalgebras with higher coproducts to $n$-categories.
-Then, I showed that the chains of the standard simplices endowed with Steenrod cup-$i$ coproducts are sent to Street's free $n$-category on the standard simplices.
-These $n$-categories are regarded as ``fundamental structures of nature" (\cite{street1987orientals} pag. 289) and define the nerve of an $n$-category by a standard procedure.
-The cubical nerve is also described in this way using the cubical cup-$i$ products introduced in Subsection \ref{ssec: odd primes}.
-
-\subsection{Persistence}
-The new description of the cup-$i$ products used in my axiomatization \cite{medina2018axiomatic} yields much more efficient computations for Steenrod squares.
-In \cite{medina2018persistence}, I developed algorithms to incorporate the finer information encoded in these cohomology operations into the persistence pipeline of topological data analysis.
-I am currently working in collaboration with the rest of \texttt{giotto-tda}'s team (see Subsection~\ref{ssec: giotto-tda}) on the high-performance implementation of these algorithms.
-
-\subsection{Cartan}
-The $Sq^k$ operations and the algebra structure on cohomology are related via the Cartan formula
-\begin{equation*}
-Sq^k(\alpha \beta) = \sum_{i+j=k} Sq^i(\alpha) Sq^j(\beta).
-\end{equation*}
-Since both of these structures are induced from the cup-$i$ products it is natural to wonder if a proof at the cochain level can be given, ideally one that constructs a cochain whose coboundary is the difference between cochains representing the relation.
-This is what I did in \cite{medina2020cartan}.
-Furthermore, the proof is effective enough that I was able to write an open-source computer implementation of the construction.
-
-The original motivation for this project came from physicist A. Kapustin.
-See \cite{kapustin2017fermionic} for a use of a special case of my construction in the context of topological phases of matter.
-
-\subsection{Adem}
-The iteration of the $Sq^k$ operations satisfy the Adem relations
-\begin{equation*}
-Sq^i Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j-k} Sq^k(\alpha)
-\end{equation*}
-for all $i,j>0$ such that $i< 2j$.
-These relations play an important role in the definition of secondary cohomology operations and $\kappa$-invariants.
-In joint work with G. Brumfiel and J. Morgan \cite{medina2021adem} we provided a construction of cochains enforcing these relations.
-
-\subsection{$E_\infty$-models}
-So far I have described the uses of Steenrod cup-$i$ products and squares.
-To generalize these constructions to odd primes, and for other applications, it is desirable to have a manageable description of the $E_{\infty}$-operad.
-No finitely presented $E_\infty$-operad can exist but passing to the context of multiple inputs and outputs allows for a finitely presented $E_\infty$-PROP.
-In \cite{medina2020prop1, medina2018prop2}, I introduced such PROPs in the categories of chain complexes and in that of CW-spaces.
-These models are related to previous constructions of McClure-Smith, Berger-Fresse and R. Kaufmann.
-By establishing the connections between these models and my PROPs, I was able to verify a conjecture stated by Kaufmann in \cite{kaufmann2009dimension}.
-
-\subsection{Steenrod operations} \label{ssec: odd primes}
-The definition of Steenrod operations for odd primes was non-constructively given in terms of the homology of symmetric groups \cite{steenrod1952reduced, steenrod1962cohomology}.
-With R. Kaufmann in \cite{medina2020maysteenrod}, we generalized the cup-$i$ products to all Steenrod operations for simplicial and cubical sets using my algebraic $E_\infty$-PROP.
-To do so, we also gave the first description of an $E_\infty$-structure on the cochains of cubical sets.
-
-\subsection{Algebraic representations}
-In \cite{medina2020globular}, I constructed a functor from globular sets, a higher dimensional generalization of directed graphs, to coalgebras with higher coproducts proving it defines a full and faithful embedding.
-This result was inspired by my thesis, where I did the same for simplicial complexes and proved additionally that the category of representations of the poset of simplices, i.e., functors from this category to chain complexes, embeds fully faithfully into the category of comodules over the associated coalgebra with higher coproducts.
-This result allowed me to reinterpret the total surgery obstruction of Ranicki \cite{ranicki1992topological} in terms of cobordism classes of these comodules.
-
-\subsection{Open-Source} \label{ssec: giotto-tda}
-\texttt{giotto-tda}.
-I am part of the team that develops the open-source software \texttt{giotto-tda}, a \texttt{Python} library that integrates high-performance topological data analysis with machine learning via a \emph{scikit-learn}--compatible API and state-of-the-art \texttt{C++} implementations \cite{medina2021giotto}.
-
-\texttt{ComCH}.
-Commutativity up-to-coherent-homotopies plays a crucial role in the study of configuration spaces and motion planning.
-I implemented the computer algebra system \texttt{ComCH} to model homotopical commutativity, as well as the novel constructions I introduced in \cite{medina2020maysteenrod} related to the homology of symmetric groups.
-
-\subsection{Information theory}
-In \cite{medina2021hyperharmonic}, we use a discrete version of the Laplace-de Rham operator to study information theory.
-More precisely, generalizations, from pairs to general tuples, of Shannon's mutual information.
-We combined methods from harmonic analysis and combinatorial topology to construct efficient representations of high-order information-theoretic signals, and showed that these have better compressibility properties than the original.
-
-\subsection{Future}
-a) I am very interested and actively developing connections between deep learning and topology.
-I wrote the mathematical content and executive summary of a grant approved by Innosuisse for 1 million Suisse francs (about 1.1 million USD) on this topic, awarded to a collaboration between L2F SA, the Laboratory for Topology and Neuroscience at EPFL, and the Institute of Reconfigurable Embedded Digital Systems (REDS) of HEIG-VD.
-
-b) In joint work with D. Sinha and G. Friedman, we are working to generalize the intersection product of submanifolds to higher-order intersections capable of effectively detecting cup-$i$ and square operations.
-
-c) I am writing a version for small categories of the well know dictionary between group representations and modules over the group (Hopf) ring.
-This is a version with better functorial properties obtained by using $E_2$-coalgebras.
-
-d) In joint work with Ralph Kaufmann and Paolo Salvatore, we are searching for chain level representatives of the mod-$p$ homology classes of configuration spaces.
-This work complements our paper \cite{medina2020maysteenrod}, focused on $E_\infty$-operads, providing representatives for the homology $E_n$-suboperads.
-
-e) With M. Rivera and M. Zeinalian we expect to combine the algebraic structures describing homotopy types \cite{sullivan1977infinitesimal, mandell2001padic} and those developed by Ranicki for the classification of topological manifold structures \cite{ranicki1992topological}.
-Substantial partial results in this direction can be found in their paper \cite{rivera2019functor} and in my thesis.
-
-f) The classification theorem in persistence homology introduces the barcode as a complete invariant for these objects.
-In \cite{de2011dualities}, using cell complexes, it was shown these barcodes have some duality properties.
-I am writing a general treatment of duality in the persistence context that extends these results and also applies to pairs consisting of a module and an endomorphism.
+In the next section I will overview the significance of these homotopy coherent structures and my contributions to this and other areas of algebraic and computational topology.
+I will devote the following section to research directions I am currently embarked on or will be in the near future.
