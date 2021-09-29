@@ -1,6 +1,21 @@
 
 \section{Future work}
 
+\subsection{Topology and deep learning}
+
+Building on the work by \texttt{giotto-tda}'s team the following research direction will be pursued.
+It already counts with a public-private Innosuisse grant approved for over 1 Million USD, whose mathematical content I wrote as part of Kathryn Hess' lab.
+Topology can complement traditional approaches to machine learning and data analysis by providing global summaries of complex relational structures.
+The added information is model-independent and highly resistant to noise.
+Designing reliable AI systems is a multi-faceted challenge and topology can be used to tackle the following core aspects of the problem:
+\begin{itemize}
+	\item Robustness to noise and adversarial attacks: deep learning models are surprisingly susceptible to small perturbations, and this can lead to unexpected failures in deployed systems.
+	\item Generalizability to unseen data: large models can overfit the data they are trained on and thus fail to generalize to data in deployment.
+\end{itemize}
+Traditional regularizers, one of the primary tools used to tackle the above challenges, impose penalties on representations that exhibit undesirable properties such as exploding gradients or highly complicated geometric structures.
+By studying the topology of the weight space and decision boundaries of trained models, we will validate on real world data the assumption that robustness is linked to less cumbersome topologies.
+This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
+
 \subsection{Foundations of geometric (co)homology} \label{ss:foundations}
 
 The use of manifold-like objects to represent homology and cohomology classes has a long history and many technical subtleties.
@@ -19,18 +34,24 @@ For example, the dual description of \cite{medina2021newformulas} was used by Ca
 
 \subsection{Cochain level secondary operations}
 
-Building on the work described in \cref{ss:cartan} and \cref{ss:adem} that constructs cochain level representatives enforcing the Cartan and Adem relations, we expect, using the formulas of \cite{medina2020maysteenrod}, to extend these constructions to all primes.
-Effectively constructing cochains enforcing these relations and capable of representing secondary operations at the cochain level.
+Building on our work described in \cref{ss:cartan} and \cref{ss:adem} constructing cochains that enforce the Cartan and Adem relations of Steenrod operations with mod $2$ coefficients, we will generalize these, using the formulas of \cite{medina2020maysteenrod}, to Steenrod operations over all primes.
+This will allow for the effective description of secondary operations and the approximation via chain complexes of certain Postnikov towers, as done for the Spin bordism spectrum in \cite{brumfiel2016pontrjagin, brumfiel2018pontrjagin}.
+
+\subsection{Topological lattice field theory}
+
+I organize a seminar at the Max Planck Institute exploring the connections between combinatorial topology and topological quantum field theory.
+Given that Steenrod \mbox{cup-$i$} products and their Adem and Cartan coboundaries feature centrally on certain field theories \cite{gaiotto2016spin, kapustin2017fermionic, barkeshli2021classification}, we expect to use the newly introduced cup-$(p,i)$ products and their Cartan and Adem cochains in the construction of new theories.
 
 \subsection{Multisimplicial cup product}
 
 Following a suggestion by P.~May, with A.~Pizzi and P.~Salvatore, we define in upcoming work an $E_\infty$-structure on multisimplicial cochains \cite{medina2021multisimplicial}.
 This structure generalizes the $E_\infty$-structures defined on simplicial and cubical cochains discussed in \cref{ss:e-infty structures}.
 
-\subsection{Topological lattice field theory}
+\subsection{Higher categories}
 
-I organize a seminar at the Max Planck Institute exploring the connections between combinatorial topology and topological quantum field theory.
-Given that Steenrod cup-$i$ products feature centrally on several physical theories \cite{gaiotto2016spin, bhardwaj2017fermionic, kapustin2017fermionic}, we expect to use the newly introduced cup-$(p,i)$ products in the construction of new theories.
+In higher category theory, the paper \cite{medina2020globular} constructs a functor producing strict $\infty$-categories from group-like cup-i coalgebras.
+In particular, the cup-$i$ constructions on simplices and cubes define, respectively, the Street nerve and cubical nerve of strict $\infty$-categories.
+We anticipate that the more general Steenrod $(p,i)$-products constructed in \cite{medina2020maysteenrod} will also have deep combinatorial interpretations in category theory which we are currently exploring.
 
 \subsection{Dyer-Lashof operations}
 
@@ -47,19 +68,11 @@ In particular, some important functoriality properties are lost in all current g
 In work to appear, I argue that to prevent this loss one should consider the $E_2$-coalgebra structure carried by the chains on the nerve of the category.
 When the category is a group, this corresponds to considering the $E_2$-coalgebra structure on the bar construction of the group algebra.
 
-\subsection{Topology and deep learning}
+\subsection{Free loop spaces and string topology}
 
-Building on the work by \texttt{giotto-tda}'s team the following research direction will be pursued.
-Topology can complement traditional approaches to machine learning and data analysis by providing global summaries of complex relational structures.
-The added information is model-independent and highly resistant to noise.
-Designing reliable AI systems is a multi-faceted challenge and topology can be used to tackle the following core aspects of the problem:
-\begin{itemize}
-	\item Robustness to noise and adversarial attacks: deep learning models are surprisingly susceptible to small perturbations, and this can lead to unexpected failures in deployed systems.
-	\item Generalizability to unseen data: large models can overfit the data they are trained on and thus fail to generalize to data in deployment.
-\end{itemize}
-Traditional regularizers, one of the primary tools used to tackle the above challenges, impose penalties on representations that exhibit undesirable properties such as exploding gradients or highly complicated geometric structures.
-By studying the topology of the weight space and decision boundaries of trained models, we will validate on real world data the assumption that robustness is linked to less cumbersome topologies.
-This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
+In \cite{medina2021cobar} we provided an $E_\infty$-model for the based loop space of non-necessarily simply-connected spaces.
+In future work we will obtain a similar model for the chains on the free loop space, which may be thought of as a twisted tensor product of two $E_\infty$-coalgebras.
+Then we will incorporate Poincar\'{e} duality and try to recover string topology in the non-simply connected case with all of its subtleties.
 
 \subsection{\pdfEinfty-algebras and $L$-theory}
 
