@@ -24,13 +24,13 @@ In \cite{medina2021newformulas}, I gave a new description of cup-$i$ coproducts 
 
 Persistent homology is a central tool in the rapidly growing field of topological data analysis.
 We used the new description of the cup-$i$ products and associated algorithm for the computation of Steenrod squares to effectively incorporate into the persistence pipeline the finer information encoded by these cohomology operations.
-With other members of \raisebox{-.5pt}{\includegraphics[scale=.08]{aux/giotto}}'s team (\cref{ss:giotto}) we develop a high-performance implementation of these methods in the package \texttt{steenroder}, which we have used to identify fine topological features of real-world data \cite{medina2018persistence}.
+With other members of \giottoTDA's team (\cref{ss:giotto}) we develop a high-performance implementation of these methods in the package \texttt{steenroder}, which we have used to identify fine topological features of real-world data \cite{medina2018persistence}.
 
 \subsection{Topological data analysis and machine learning} \label{ss:giotto}
 
 I am part of the team that develops the open-source software \texttt{giotto-tda}, a \texttt{Python} library that integrates high-performance topological data analysis with machine learning via a \emph{scikit-learn}--compatible API and state-of-the-art \texttt{C++} implementations \cite{medina2021giotto}.
 We are adding to this versatile multi-task package the functionalities of \texttt{steenroder}, making easier to machine learning practitioner to use the above enhancements of the traditional barcode.
-The \raisebox{-.5pt}{\includegraphics[scale=.08]{aux/giotto}} project is the result of a public-private partnership between the \href{https://www.epfl.ch/labs/hessbellwald-lab/}{\textit{Laboratory for Topology and Neuroscience}} at EPFL, the machine learning company \href{https://www.l2f.ch/}{\textit{L2F SA}}, and the \href{https://heig-vd.ch/en/research/reds}{\textit{Institute of Reconfigurable \& Embedded Digital Systems}} of HEIG-VD.
+The \giottoTDA\ project is the result of a public-private partnership between the \href{https://www.epfl.ch/labs/hessbellwald-lab/}{\textit{Laboratory for Topology and Neuroscience}} at EPFL, the machine learning company \href{https://www.l2f.ch/}{\textit{L2F SA}}, and the \href{https://heig-vd.ch/en/research/reds}{\textit{Institute of Reconfigurable \& Embedded Digital Systems}} of HEIG-VD.
 
 \subsection{Axioms}
 
@@ -64,7 +64,7 @@ Since both of these structures are induced from the cup-$i$ products it is natur
 This is what I did in \cite{medina2020cartan}.
 Furthermore, the proof is effective enough that I was able to write an open-source computer implementation of the construction.
 The original motivation for this project and the one below came from physicist Anton Kapustin.
-More on the connection to physics in the next section.
+More on the connection to physics in \cref{ss:spt phases}.
 
 \subsection{Adem} \label{ss:adem}
 
@@ -74,14 +74,12 @@ Sq^i Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j
 \end{equation*}
 for all $i,j > 0$ such that $i < 2j$.
 These relations play an important role in the definition of secondary cohomology operations and $\kappa$-invariants of Postnikov towers.
-
 In joint work with G. Brumfiel and J. Morgan \cite{medina2021adem} we provided a construction of cochains enforcing these relations in the same spirit as those I constructed for the Cartan relation.
 
 \subsection{\pdfEinfty-operads}
 
 The cup-$i$ products are part of a more general structure known as an \textit{$E_\infty$-algebra}, a notion controlled by so called \textit{$E_\infty$-operads}.
 The study of $E_\infty$-structures has a long history, where (co)homology operations \cite{steenrod1962cohomology, may1970general}, the recognition of infinite loop spaces \cite{boardman1973homotopy, may1972geometry}, and the complete algebraic representation of the $p$-adic homotopy category \cite{mandell2001padic} are key milestones.
-
 No finitely presented $E_\infty$-operad can exist but, as I showed in \cite{medina2020prop1, medina2018prop2}, passing to the context of multiple inputs and outputs allows for the introduction of props whose associated operads are $E_\infty$.
 I related my models in the categories of chains complexes and CW-spaces to $E_\infty$-operads previously defined by McClure--Smith \cite{mcclure2003multivariable}, Berger--Fresse \cite{berger2004combinatorial} and R.~Kaufmann \cite{kaufmann2009dimension}, and used these comparisons to establish a conjecture of his.
 

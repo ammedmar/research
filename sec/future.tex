@@ -32,9 +32,14 @@ When the category is a group, this corresponds to considering the $E_2$-coalgebr
 
 \subsection{Geometric cohomology} \label{ss:geometric cohomology}
 
+de Rham cohomology has long been lauded as a perfect cohomology theory by champions such as Sullivan and Bott.
+A combination of geometric underpinning and commutativity at the cochain level make it a remarkably effective tool for many applications of rational homotopy theory.
+Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains with a partially defined commutative
+product.
 As part of a long term project with D. Sinha and G. Friedman we are working to provide a firm foundation for a model of ordinary (co)homology of smooth manifolds based on maps from manifolds with corners as generating (co)chains \cite{medina2021foundations}.
 The first application of this theory already appeared in \cite{medina2021flowing}, where we use a vector field flow defined through a cubulation of a closed manifold to reconcile the partially defined commutative product on geometric cochains with the standard cup product on cubical cochains, which is fully defined and commutative only up to coherent homotopies.
 Several more applications are to follow.
+Eventually we expect to encode geometrically the $E_\infty$-structure of manifolds in a geometric form on our model.
 
 \subsection{Explicit Lie models for connected spaces} \label{ss:lie models}
 
@@ -53,8 +58,7 @@ As proven by Quillen, the quasi-isomorphism type of this $C_\infty$-coalgebra is
 For the $C_\infty$-coalgebra structure on the interval, Dennis and Ruth Lawrence addressed the challenge reprinted above introducing a formula for it which can be interpreted in terms of parallel transport of flat connections \cite{lawrence2014interval}, and for which the subdivision map is described by the Baker--Campbell--Hausdorff formula.
 
 To generalize Quillen's equivalence of homotopy categories to one between (not necessarily 1-connected) simplicial sets Buijs, F{\'e}lix, Murillo, and Tanr{\'e} provided in \cite{buijs2020liemodels} an axiomatic characterization of a $C_\infty$-coalgebra structures on the chains of standard simplices extending the Lawrence--Sullivan structure.
-Their construction, also presented independently by Bandiera and Robert-Nicoud using operads, agrees after linear dualization with the one obtained by Cheng and Getzler in \cite{getzler2008transfering}, where they showed that the Kontsevich--Soibelman sum-over-trees formula defining the transfer of $A_\infty$-algebras through a chain contraction induces a transfer of $C_\infty$-algebras.
-This allowed them to construct a $C_\infty$-algebra structure on simplicial cochains by transferring Sulivan' polynomial differential forms \cite{sullivan1977infinitesimal} through Dupont's contraction.
+Their construction, also presented independently by Bandiera and Robert-Nicoud using operads, agrees after linear dualization with the one obtained by Cheng and Getzler in \cite{getzler2008transfering}.
 The resulting description is given in terms of rooted trees.
 
 $C_\infty$-coalgebras are controlled by the operad $\com_\infty$ which is the Koszul resolution of the operad $\com$, i.e., the cobar construction applied to the suspension of the cooperad $\lie^{\mathrm c}$, the Koszul dual cooperad of $\com$.
@@ -74,18 +78,19 @@ This could be corrected through an algebraic symmetrization of the associahedral
 Together with Guillaume Laplante-Anfossi we are exploring the geometry of higher diagonals of convex polytopes.
 This work connects to higher category in the form pioneered by Kapranov and Voevodsky \cite{kapranov1991polycategories}.
 We have already achieved substantial progress in the study of higher Steenrod diagonals using the notion of fiber polytopes \cite{billera1992fiber.polytopes}.
-We introduced a generalization of the Masuda--Thomas--Tonks--Vallette construction of a cellular diagonal from a admissible vector, to the construction of a Steenrod diagonal from an admissible orthonormal frame.
+Namely, we introduced a generalization of the Masuda--Thomas--Tonks--Vallette construction of a cellular diagonal from a admissible vector, to the construction of a Steenrod diagonal from an admissible orthonormal frame.
 This is a very exciting connection bringing convex geometry, higher categories, and homotopy theory closer together, from which a vast area of research opens.
 Several projects are growing from this connection whose completion will involve Ralph Kaufmann, Guillaume Laplante-Anfossi, Viktoriya Ozornova, Bruno Vallete and other researchers.
 
 \subsection{Odd prime Steenrod operations: persistence theory and Khovanov homology} \label{ss:odd prime steenrod operations}
 
-In work being finalized, with Federico Cantero-Mor\'{a}n we introduced a description of Steenrod operations at the simplicial cochain level that is dual to the one given in \cite{medina2021maysteenrod}.
+In work being finalized, with Federico Cantero-Mor\'{a}n we introduce a description of Steenrod operations at the simplicial cochain level that is dual to the one given in \cite{medina2021maysteenrod}.
 This is a generalization of the description in \cite{medina2021newformulas} of cup-$i$ products to cup-$(p,i)$ products.
-There are two sources of motivation for this.
-On one hand, for applications in persistent homology or computational topology more broadly, this description lends itself to a much faster algorithmic implementation.
-On the other, this dual description allowed Cantero-Mor\'an to define Steenrod operations at the even prime on Khovanov homology \cite{cantero-moran2020khovanov}.
+There are two sources of motivation for this result.
+On one hand, for applications in persistent homology or computational topology more broadly, this description leads to faster algorithms computing Steenrod operations of finite simplicial complexes, as illustrated for the even prime in \cite{medina2021newformulas}.
+On the other hand, this dual description allowed Cantero-Mor\'an to define Steenrod operations at the even prime on Khovanov homology \cite{cantero-moran2020khovanov}.
 We will use our dual description of cup $(p,i)$-products to define said operations on Khovanov homology at odd primes as well.
+We also plan to implement algorithms resulting from these formulae for the study of knots and links.
 This project will involved several graduate students and other young researcher, for which some financial support has already been secured.
 
 \subsection{Homotopical algebraic data analysis and AI} \label{ss:ai}
@@ -103,7 +108,7 @@ By studying the topology of the weight space and decision boundaries of trained 
 This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
 
 To quantify the topological complexity of these spaces and device such regularization procedures, developments from the sub-field of homotopical algebraic data analysis, such as Steenrod persistence modules, are fundamental.
-Together with part of \texttt{giotto-tda}'s team, we will develop -- at all stages from theory and algorithms to implementation and deployment -- novel homotopical invariants that can be used for these and similar challenges.
+Together with part of \giottoTDA's team, we will develop -- at all stages from theory and algorithms to implementation and deployment -- novel homotopical invariants that can be used for these and similar challenges.
 International collaborations are also envision, in particular, with the Laboratory for Topology and Neuroscience at EPFL, where as a member I wrote the mathematical content of a grant on this topic awarded for over 1 million USD.
 
 \subsection{Symmetry protected topological phases and cochain constructions} \label{ss:spt phases}
