@@ -1,99 +1,140 @@
 
-\section{Future work} \label{s:future}
+\section{Current work} \label{s:current}
 
-\noindent \textsc{Shorter term projects}
+\subsection{Stability of Steenrod barcodes}
 
-\subsection{Multisimplicial cup product}
+Their \textit{stability} is an important reason for the widespread use of the barcode invariant of filtered spaces in both applied and theoretical mathematics.
+This property states roughly that with respect to the natural distance of barcodes, the passage from filtered spaces with the Gromov--Hausdorff distance to barcodes is Lipschitz.
+In joint work with F. M\'emoli and L. Zhou, we prove a stability result for Steenrod barcodes and explore some specific bounds for certain continuous and discrete examples.
 
-Following a suggestion by P.~May, with A.~Pizzi and P.~Salvatore, we define in upcoming work an $E_\infty$-structure on multisimplicial cochains \cite{medina2021multisimplicial}.
-This structure generalizes the $E_\infty$-structures defined on simplicial and cubical cochains discussed in (\cref{ss:e-infty structures}).
+\subsection{Multisimplicial chains and configuration spaces}
 
-\subsection{Cochain level secondary operations}
+Following a suggestion of P.~May, with A.~Pizzi and P.~Salvatore, we use my model of the $E_\infty$-operad to define a natural $E_\infty$-structure on the chains of multisimplicial sets.
+We use this to construct a zig-zag of quasi-isomorphisms of $E_\infty$-coalgebras between the singular simplicial chains of the configuration space of~$k$ points in $\R^n$, and the \textit{surjections} multisimplicial model of McClure--Smith.
 
-Using the formulas of \cite{medina2021maysteenrod} for cochain level Steenrod operations over all primes.
-I will extend our work constructing cochains that enforce the Cartan and Adem relations of Steenrod operations with mod $2$ coefficients (\cref{ss:cartan} - \cref{ss:adem}) to all primes.
-The case of the Cartan relation is currently being written, whereas that of the Adem relation requires new ideas.
+\subsection{Framed polytopes, higher categories and Steenrod diagonals} \label{ss:polytopes}
 
-\subsection{Free loop spaces and string topology}
+Together with G. Laplante-Anfossi and B. Vallette we are exploring the convex geometry of higher diagonals of polytopes.
+The uncovered structures create a bridge between Steenrod type constructions and higher category.
+More specifically, we show a duality between higher diagonals on a $n$ dimensional polytope $P$ and free $n$-category structures on it.
+Both being canonically constructed from a generic frame for $P$.
+Additionally, we use our techniques to provide a proof of a theorem of Kapranov and Voevodsky.
 
-In \cite{medina2021cobar} we provided an $E_\infty$-model for the based loop space of non-necessarily simply-connected spaces.
-In future work we will obtain a similar model for the chains on the free loop space, which may be thought of as a twisted tensor product of two $E_\infty$-coalgebras.
-Then we will incorporate Poincar\'{e} duality and try to recover string topology in the non-simply connected case with all of its subtleties.
+%\subsection{Cochain level secondary operations}
+%
+%Using the formulas of \cite{medina2021may_st} for cochain level Steenrod operations over all primes.
+%I will extend our work constructing cochains that enforce the Cartan and Adem relations of Steenrod operations with mod $2$ coefficients (\cref{ss:cartan} - \cref{ss:adem}) to all primes.
+%The case of the Cartan relation is currently being written, whereas that of the Adem relation requires new ideas.
+%
+%\subsection{Free loop spaces and string topology}
+%
+%In \cite{medina2021cobar} we provided an $E_\infty$-model for the based loop space of non-necessarily simply-connected spaces.
+%In future work we will obtain a similar model for the chains on the free loop space, which may be thought of as a twisted tensor product of two $E_\infty$-coalgebras.
+%Then we will incorporate Poincar\'{e} duality and try to recover string topology in the non-simply connected case with all of its subtleties.
+%
+%\subsection{Representation and cohomology of categories}
+%
+%The theory of representations and cohomology of groups can be recasted in terms of (Hopf) group rings.
+%Many of the results in this theory extend naturally to quivers and (small) categories but not all.
+%In particular, some important functoriality properties are lost in all current generalizations from groups to categories.
+%In work to appear, I argue that to prevent this loss one should consider the $E_2$-coalgebra structure carried by the chains on the nerve of the category.
+%When the category is a group, this corresponds to considering the $E_2$-coalgebra structure on the bar construction of the group algebra.
 
-\subsection{Representation and cohomology of categories}
+\subsection{Odd prime Steenrod operations: persistence theory and Khovanov homology} \label{ss:odd prime steenrod operations}
 
-The theory of representations and cohomology of groups can be recasted in terms of (Hopf) group rings.
-Many of the results in this theory extend naturally to quivers and (small) categories but not all.
-In particular, some important functoriality properties are lost in all current generalizations from groups to categories.
-In work to appear, I argue that to prevent this loss one should consider the $E_2$-coalgebra structure carried by the chains on the nerve of the category.
-When the category is a group, this corresponds to considering the $E_2$-coalgebra structure on the bar construction of the group algebra.
-
-\vspace*{10pt} \noindent \textsc{Longer term programs}
+With F. Cantero-Mor\'{a}n we introduce a description of Steenrod operations at the simplicial cochain level that is stable.
+This is a generalization of the description in \cite{medina2023fast_sq} of cup-$i$ products to cup-$(p,i)$ products.
+There are two sources of motivation for this result.
+On one hand, for applications in persistent homology or computational topology more broadly, this description leads to faster algorithms computing Steenrod operations of finite simplicial complexes, as illustrated for the even prime.
+On the other hand, this dual description allowed Cantero-Mor\'an to define Steenrod operations at the even prime on Khovanov homology \cite{cantero-moran2020khovanov}.
+We will use our dual description of cup $(p,i)$-products to define said operations on Khovanov homology at odd primes as well.
+We also plan to implement algorithms resulting from these formulae for the study of knots and links.
 
 \subsection{Geometric cohomology} \label{ss:geometric cohomology}
 
 de Rham cohomology has long been lauded as a perfect cohomology theory by champions such as Sullivan and Bott.
 A combination of geometric underpinning and commutativity at the cochain level make it a remarkably effective tool for many applications of rational homotopy theory.
-Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains with a partially defined commutative
-product.
-As part of a long term project with D. Sinha and G. Friedman we are working to provide a firm foundation for a model of ordinary (co)homology of smooth manifolds based on maps from manifolds with corners as generating (co)chains \cite{medina2021foundations}.
-The first application of this theory already appeared in \cite{medina2021flowing}, where we use a vector field flow defined through a cubulation of a closed manifold to reconcile the partially defined commutative product on geometric cochains with the standard cup product on cubical cochains, which is fully defined and commutative only up to coherent homotopies.
+Over the integers, submanifolds and intersection in various settings provide geometrically meaningful cochains with a partially defined commutative product.
+As part of a long term project with D. Sinha and G. Friedman we are working to provide a firm foundation for a model of ordinary (co)homology of smooth manifolds based on maps from manifolds with corners as generating (co)chains.
+The first application of this theory already appeared in \cite{medina2021flowing} and was summarized above in \cref{ss:flowing}.
 Several more applications are to follow.
-Eventually we expect to encode geometrically the $E_\infty$-structure of manifolds in a geometric form on our model.
+Eventually we expect to encode geometrically the $E_\infty$-structure of manifolds in a geometric form using our theory.
 
-\subsection{Explicit Lie models for connected spaces} \label{ss:lie models}
+\subsection{Non-invertible Dijkgraaf--Witten theory}
 
-Over $\Q$, a chain approximation to the diagonal can be symmetrized, giving rise to a cocommutative coalgebra structure on cellular chains.
-This coalgebra cannot be made simultaneously coassociative, but this relation can be imposed in a derive sense through a family of coherent chain homotopies -- which also respect certain symmetry constrains -- and give rise to a so called $C_\infty$-coalgebra structure.
-One can think of $C_\infty$-coalgebras in terms of the somewhat more familiar notion of $A_\infty$-coalgebra where cocommutativity is satisfied strictly.
-As a manifestation of Koszul duality, a $C_\infty$-coalgebra structure on cellular chains is equivalent to a differential on the completion of the free graded Lie algebra generated by the cells shifted downwards in degree by one.
-This relates $C_\infty$-coalgebras to deformation theory through Deligne's principle.
-For cell complexes whose closed cells have the $\Q$-homology of a point, Dennis Sullivan provided in \cite{sullivan2007appendix} a local inductive construction defining a $C_\infty$-coalgebra structure on their cellular chains.
-We reprint a challenge he posted regarding the resulting structure.
-\begin{displaycquote}[p.2]{lawrence2014interval}
-	\textsc{Problem}. Study this free differential Lie algebra attached to a cell complex, determine its topological and geometric meaning as an intrinsic object.
-	Give closed form formulae for the differential and for the induced maps associated to subdivisions.
-\end{displaycquote}
-As proven by Quillen, the quasi-isomorphism type of this $C_\infty$-coalgebra is a complete invariant of the rational homotopy type of simply-connected spaces.
-For the $C_\infty$-coalgebra structure on the interval, Dennis and Ruth Lawrence addressed the challenge reprinted above introducing a formula for it which can be interpreted in terms of parallel transport of flat connections \cite{lawrence2014interval}, and for which the subdivision map is described by the Baker--Campbell--Hausdorff formula.
+In traditional Dijkgraaf--Witten theory the fields are principal bundles for a finite
+group $G$, which form a groupoid.
+%These form a groupoid $\Bun_G$ with morphisms given by gauge transformations.
+An alternative, but homotopy equivalent, description of the collection of all fields on a $d$-manifold $M$ is as the mapping space $\mathrm{Map}(M, \rB G)$, which is an $\infty$-groupoid.
+%The connection between the two description is through the homotopy hypothesis~\cite{} which is
+%an equivalence between $\infty$-groupoids and topological spaces.
+%Concretely, the space $\Map(M,BG)$ is aspherical and its fundamental groupoud $\Pi_1
+%(\Map(M,BG))$ is equivalent to $\Bun_G(M)$.
+%This has an explicit description in terms of a triangulation of $X$ of $M$.
+%\color{red} Mention cochains and lattice field theories. Note that this actually
+%depends on the triangulation \color{black}
+With L. Muller and L. Stehouwer, we move away from the manifest invertibility of these groupoids by
+considering a triangulation on $M$ and the free $n$-category structure it generates -- please compare with \cref{ss:nerve} and \cref{ss:polytopes}.
+The resulting more general theories have fields given $d$-functors from $M$ to appropriate $d$-categorical generalizations of $\rB G$.
 
-To generalize Quillen's equivalence of homotopy categories to one between (not necessarily 1-connected) simplicial sets Buijs, F{\'e}lix, Murillo, and Tanr{\'e} provided in \cite{buijs2020liemodels} an axiomatic characterization of a $C_\infty$-coalgebra structures on the chains of standard simplices extending the Lawrence--Sullivan structure.
-Their construction, also presented independently by Bandiera and Robert-Nicoud using operads, agrees after linear dualization with the one obtained by Cheng and Getzler in \cite{getzler2008transfering}.
-The resulting description is given in terms of rooted trees.
 
-$C_\infty$-coalgebras are controlled by the operad $\com_\infty$ which is the Koszul resolution of the operad $\com$, i.e., the cobar construction applied to the suspension of the cooperad $\lie^{\mathrm c}$, the Koszul dual cooperad of $\com$.
-Another interesting resolution of $\com$ is constructed concatenating the bar and cobar constructions.
-This resolution method is an algebraic version of the $W$-construction of Boardman--Vogt.
-In \cite{vallette2020higherlietheory}, Daniel Robert-Nicoud and Bruno Vallette studied coalgebras over this resolution of $\com$, which they termed $CC_\infty$-coalgebras.
-They constructed on the chain of standard simplices natural $CC_\infty$-coalgebra structures and described them explicitly using bicolored trees.
 
-Despite the explicit constructions reviewed above, the problem quoted earlier related to closed form formulae remains open.
-One possible avenue to generalize to cubical chains the formula defining the Lawrence--Sullivan $C_\infty$-coalgebra on $\gchains(\gcube)$, is to define the tensor product of $C_\infty$-coalgebras and then extend it monoidally to all cubes via the isomorphism $\chains(\cube^n) \cong \gchains(\gcube)^{\ot n}$.
-The monoidal structure on the category of $A_\infty$-coalgebras is defined through a chain approximation to the diagonal of the Stasheff polytopes compatible with the operad structure, a diagonal interpreted geometrically by Masuda--Thomas--Tonks--Vallette in \cite{vallette2021associahedra}.
-Unfortunately, the resulting $A_\infty$-coalgebra on $\gchains(\gcube)^{\ot 2}$ is not $C_\infty$.
-This could be corrected through an algebraic symmetrization of the associahedral diagonal, and deeper understanding of the space of diagonals of polytopes.
 
-\subsection{Fiber polytopes and Steenrod diagonals} \label{ss:polytopes}
+%The first task in our construction of non-invertible Dijkgraaf--Witten theory
+%is to find an appropriate generalisation of the space of fields.
+%A first guess on how to overcome this problem is to work with higher categories instead of
+%(higher) groupoids. For example when one replaces the finite group $G$ by an
+%finite dimensional algebra $A$, it is natural to consider the the linear category
+%$BA$ as a natural replacement of $BG$. However, the problem with this is
+%that any map from $M$ to $BA$ will automatically factor through the full
+%subgroupoid of $BA$. Alternativly, one might try to consider the space or
+%$\infty$-groupoid constructed by geometrically realising $BA$.
+%The geometric realisation is a concrete way of constructed the localisation of $BA$ at all
+%morphisms. A gauge theory based on the geometric realisation $|BA|$ replaces the
+%non-invertible gauge structure by a higher gauge group $|BA|$.
+%Higher gauge theoretic versions of Dijkgraaf--Witten theory have been studied
+%extensively~\cite{some thing}, but are not what we are interested in here.
 
-Together with Guillaume Laplante-Anfossi we are exploring the geometry of higher diagonals of convex polytopes.
-This work connects to higher category in the form pioneered by Kapranov and Voevodsky \cite{kapranov1991polycategories}.
-We have already achieved substantial progress in the study of higher Steenrod diagonals using the notion of fiber polytopes \cite{billera1992fiber.polytopes}.
-Namely, we introduced a generalization of the Masuda--Thomas--Tonks--Vallette construction of a cellular diagonal from a admissible vector, to the construction of a Steenrod diagonal from an admissible orthonormal frame.
-This is a very exciting connection bringing convex geometry, higher categories, and homotopy theory closer together, from which a vast area of research opens.
-Several projects are growing from this connection whose completion will involve (in alphabetical order) Ralph Kaufmann, Guillaume Laplante-Anfossi, Viktoriya Ozornova, Bruno Vallete and other researchers.
+%We propose a different approach to overcome these problems which generalizes the
+%lattice formulation outlined above. The key observation is that as explained in
+%Section~... to a triangulation together with a branching structure one can naturally associate an $d$-category $\Or(X)$. Restricting to the $n$-skeleton
+%of $X$ gives a $n$-category $\Or_n(X)$.
 
-\subsection{Odd prime Steenrod operations: persistence theory and Khovanov homology} \label{ss:odd prime steenrod operations}
+\section{Application domains} \label{s:future}
 
-In work being finalized, with Federico Cantero-Mor\'{a}n we introduced a description of Steenrod operations at the simplicial cochain level that is dual to the one given in \cite{medina2021maysteenrod}.
-This is a generalization of the description in \cite{medina2021newformulas} of cup-$i$ products to cup-$(p,i)$ products.
-There are two sources of motivation for this result.
-On one hand, for applications in persistent homology or computational topology more broadly, this description leads to faster algorithms computing Steenrod operations of finite simplicial complexes, as illustrated for the even prime in \cite{medina2021newformulas}.
-On the other hand, this dual description allowed Cantero-Mor\'an to define Steenrod operations at the even prime on Khovanov homology \cite{cantero-moran2020khovanov}.
-We will use our dual description of cup $(p,i)$-products to define said operations on Khovanov homology at odd primes as well.
-We also plan to implement algorithms resulting from these formulae for the study of knots and links.
-This project will involved several graduate students and other young researcher, for which some financial support has already been secured.
+%\subsection{Explicit Lie models for connected spaces} \label{ss:lie models}
+%
+%Over $\Q$, a chain approximation to the diagonal can be symmetrized, giving rise to a cocommutative coalgebra structure on cellular chains.
+%This coalgebra cannot be made simultaneously coassociative, but this relation can be imposed in a derive sense through a family of coherent chain homotopies -- which also respect certain symmetry constrains -- and give rise to a so called $C_\infty$-coalgebra structure.
+%One can think of $C_\infty$-coalgebras in terms of the somewhat more familiar notion of $A_\infty$-coalgebra where cocommutativity is satisfied strictly.
+%As a manifestation of Koszul duality, a $C_\infty$-coalgebra structure on cellular chains is equivalent to a differential on the completion of the free graded Lie algebra generated by the cells shifted downwards in degree by one.
+%This relates $C_\infty$-coalgebras to deformation theory through Deligne's principle.
+%For cell complexes whose closed cells have the $\Q$-homology of a point, Dennis Sullivan provided in \cite{sullivan2007appendix} a local inductive construction defining a $C_\infty$-coalgebra structure on their cellular chains.
+%We reprint a challenge he posted regarding the resulting structure.
+%\begin{displaycquote}[p.2]{lawrence2014interval}
+%	\textsc{Problem}. Study this free differential Lie algebra attached to a cell complex, determine its topological and geometric meaning as an intrinsic object.
+%	Give closed form formulae for the differential and for the induced maps associated to subdivisions.
+%\end{displaycquote}
+%As proven by Quillen, the quasi-isomorphism type of this $C_\infty$-coalgebra is a complete invariant of the rational homotopy type of simply-connected spaces.
+%For the $C_\infty$-coalgebra structure on the interval, Dennis and Ruth Lawrence addressed the challenge reprinted above introducing a formula for it which can be interpreted in terms of parallel transport of flat connections \cite{lawrence2014interval}, and for which the subdivision map is described by the Baker--Campbell--Hausdorff formula.
+%
+%To generalize Quillen's equivalence of homotopy categories to one between (not necessarily 1-connected) simplicial sets Buijs, F{\'e}lix, Murillo, and Tanr{\'e} provided in \cite{buijs2020liemodels} an axiomatic characterization of a $C_\infty$-coalgebra structures on the chains of standard simplices extending the Lawrence--Sullivan structure.
+%Their construction, also presented independently by Bandiera and Robert-Nicoud using operads, agrees after linear dualization with the one obtained by Cheng and Getzler in \cite{getzler2008transfering}.
+%The resulting description is given in terms of rooted trees.
+%
+%$C_\infty$-coalgebras are controlled by the operad $\com_\infty$ which is the Koszul resolution of the operad $\com$, i.e., the cobar construction applied to the suspension of the cooperad $\lie^{\mathrm c}$, the Koszul dual cooperad of $\com$.
+%Another interesting resolution of $\com$ is constructed concatenating the bar and cobar constructions.
+%This resolution method is an algebraic version of the $W$-construction of Boardman--Vogt.
+%In \cite{vallette2020higherlietheory}, Daniel Robert-Nicoud and Bruno Vallette studied coalgebras over this resolution of $\com$, which they termed $CC_\infty$-coalgebras.
+%They constructed on the chain of standard simplices natural $CC_\infty$-coalgebra structures and described them explicitly using bicolored trees.
+%
+%Despite the explicit constructions reviewed above, the problem quoted earlier related to closed form formulae remains open.
+%One possible avenue to generalize to cubical chains the formula defining the Lawrence--Sullivan $C_\infty$-coalgebra on $\gchains(\gcube)$, is to define the tensor product of $C_\infty$-coalgebras and then extend it monoidally to all cubes via the isomorphism $\chains(\cube^n) \cong \gchains(\gcube)^{\ot n}$.
+%The monoidal structure on the category of $A_\infty$-coalgebras is defined through a chain approximation to the diagonal of the Stasheff polytopes compatible with the operad structure, a diagonal interpreted geometrically by Masuda--Thomas--Tonks--Vallette in \cite{vallette2021associahedra}.
+%Unfortunately, the resulting $A_\infty$-coalgebra on $\gchains(\gcube)^{\ot 2}$ is not $C_\infty$.
+%This could be corrected through an algebraic symmetrization of the associahedral diagonal, and deeper understanding of the space of diagonals of polytopes.
 
-\subsection{Homotopical algebraic data analysis and AI} \label{ss:ai}
+\subsection{Homotopical algebra, data analysis and AI} \label{ss:ai}
 
 Topology can complement traditional approaches to machine learning and data analysis by providing global summaries of complex relational structures.
 The added information is model-independent and highly resistant to noise.
@@ -108,7 +149,7 @@ By studying the topology of the weight space and decision boundaries of trained 
 This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
 
 To quantify the topological complexity of these spaces and device such regularization procedures, developments from the sub-field of homotopical algebraic data analysis, such as Steenrod persistence modules, are fundamental.
-Together with part of \giottoTDA's team, we will develop -- at all stages from theory and algorithms to implementation and deployment -- novel homotopical invariants that can be used for these and similar challenges.
+Together with part of \giottoTDA's team, we will continue to develop -- at all stages from theory and algorithms to implementation and deployment -- novel homotopical invariants that can be used for these and similar challenges.
 International collaborations are also envision, in particular, with the Laboratory for Topology and Neuroscience at EPFL, where as a member I wrote the mathematical content of a grant on this topic awarded for over 1 million USD.
 
 \subsection{Symmetry protected topological phases and cochain constructions} \label{ss:spt phases}
@@ -119,12 +160,12 @@ We think of these as defined on flat space.
 One such system is said to be \textit{gapped} if the spectrum of the Hamiltonian is bounded away from $0$, and two Hamiltonians represent the same \textit{phase} if there exists a deformation between them consisting only of systems that remain bounded from below.
 
 Given a lattice model, using cellular decompositions and state sum type constructions one can often compute the corresponding \textit{partition functions} on spacetime manifolds from actions expressed in terms of gauge fields represented by cochains and cochain level structures: Stiefel--Whitney cochains, cup-$(p, i)$ products (\cref{ss:cup-i}, \cref{ss:may steenrod}) and Cartan/Adem coboundaries (\cref{ss:cartan}, \cref{ss:adem}) among others.
-Subdivision invariance gives rise to a functorial TQFT, which in the \textit{invertible} case is expected to be controlled by a generalized cohomology theory \cite{freed2021reflection}.
+Subdivision invariance gives rise to a functorial TQFT, which in the \textit{invertible} case is expected to be controlled by a generalized cohomology theory.
 The cochain level structure used in the definition of the cellular gauge theory is interpreted from this point of view as describing a cochain model of the Postnikov tower of the relevant spectrum.
-For example, fermionic phases protected by a $G$-symmetry are believed to be classified by applying to $BG$ the Pontryagin dual of spin bordism \cite{kapustin2015cobordism, kapustin2017fermionic}.
-Building on these insights and using a formula of mine \cite{medina2020cartan}, A. Kapustin proposed a structural ansatz in low dimensions that Greg Brumfiel and John Morgan verified by constructing cochain models of certain connective covers of said spectrum \cite{brumfiel2016pontrjagin, brumfiel2018pontrjagin}.
+For example, fermionic phases protected by a $G$-symmetry are believed to be classified by applying to $BG$ the Pontryagin dual of spin bordism.
+Building on these insights and using a formula of mine \cite{medina2020cartan}, A. Kapustin proposed a structural ansatz in low dimensions that Greg Brumfiel and John Morgan verified by constructing cochain models of certain connective covers of said spectrum.
 
-I will deepen the understanding of SPT phases by further connecting these point of view: lattice models, discrete gauge theories, stable homotopy theory, functorial field theories.
-This is a long term project, but a first concrete objective is the description of the signature of 4 manifolds through a combinatorial local state sum formula.
-The importance of this question has been highlighted by Peter Teichner.
-Partial results for general $4k$-manifolds have been achieved by Dennis Sullivan and Andrew Ranicki \cite{sullivan1976signature}.
+I will deepen the understanding of SPT phases by further connecting these point of view: lattice models, stable homotopy theory, topological field theories.
+%This is a long term project, but a first concrete objective is the description of the signature of 4 manifolds through a combinatorial local state sum formula.
+%The importance of this question has been highlighted by Peter Teichner.
+%Partial results for general $4k$-manifolds have been achieved by Dennis Sullivan and Andrew Ranicki \cite{sullivan1976signature}.

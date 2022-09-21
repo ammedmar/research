@@ -1,22 +1,25 @@
+% !TEX root = ../template.tex
+
+\usepackage{microtype}
 \usepackage{amssymb}
+\usepackage{mathtools}
 \usepackage{tikz-cd}
 \usepackage{mathbbol} % changes \mathbb{} and adds more support
-\usepackage{csquotes}
 
 % bibliography
-\usepackage[backend=biber,
-	style=alphabetic,
+\usepackage[
+	backend=biber,
+	style=numeric, % alphabetic, remove sorting=none
+	sorting=none,
 	backref=true,
 	url=false,
 	doi=false,
 	isbn=false,
-	eprint=false
-	]{biblatex}
+	eprint=false]{biblatex}
 
 \renewbibmacro{in:}{}  % don't display "in:" before the journal name
 \AtEveryBibitem{\clearfield{pages}}  % don't show page numbers
 
-% get titles hyperlinked
 \DeclareFieldFormat{title}{\myhref{\mkbibemph{#1}}}
 \DeclareFieldFormat
 [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
@@ -43,7 +46,8 @@
 }
 
 % references
-\usepackage[bookmarks=true,
+\usepackage[
+	bookmarks=true,
 	linktocpage=true,
 	bookmarksnumbered=true,
 	breaklinks=true,
@@ -64,12 +68,11 @@
 }
 
 \usepackage[capitalize, noabbrev]{cleveref}
-\let\subsectionSymbol\S
-\crefname{subsection}{\subsectionSymbol\!}{subsections}
+\crefname{subsection}{\S\!}{subsections}
 
 % layout
-\addtolength{\textwidth}{2.6in}
-\addtolength{\textheight}{2.2in}
+\addtolength{\textwidth}{2in}
+\addtolength{\textheight}{2in}
 \calclayout
 
 % update to MSC2020

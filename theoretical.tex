@@ -1,28 +1,26 @@
 \documentclass[9pt]{amsart}
-\usepackage{aux/style}
-\addbibresource{aux/bibliography.bib}
+\input{aux/style}
+\input{aux/usualcmds}
 \addbibresource{aux/usualpapers.bib}
-\addbibresource{aux/mypapers.bib}
 \input{aux/commands}
-
+\addbibresource{aux/bibliography.bib}
+\input{aux/figures}
 \newcommand{\giottoTDA}{\raisebox{-.5pt}{\includegraphics[scale=.08]{aux/giotto}}}
+\usepackage{csquotes}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-\title[Effective constructions in algebraic topology]{Effective constructions in algebraic topology \\ with applications to machine learning and lattice field theory}
+\title[Effective constructions in algebraic topology]{Effective constructions in algebraic topology \\ with applications to data science and field theory}
 
 \author[A.~Medina-Mardones]{Anibal~M.~Medina-Mardones}
 \address{A.M-M., Max Planck Institute for Mathematics \and University of Notre Dame}
 \email{\href{mailto:ammedmar@mpim-bonn.mpg.de}{ammedmar@mpim-bonn.mpg.de}}
 
-\date{\today}
-
-\input{aux/figures}
-
 \begin{document}
-	\vspace*{-1.2cm}
 	\input{aux/abstract}
 	\maketitle
 	\thispagestyle{empty}
+	\vspace*{-10pt}
 	\input{sec/introduction}
 	\input{sec/past}
 	\input{sec/future}

@@ -1,6 +1,6 @@
 % !TEX root = ../theoretical.tex
 
-\section{Introduction} \label{s:introduction}
+\section*{Introduction} \label{s:introduction}
 
 There is a tense trade-off in algebraic topology having roots reaching back to the beginning of its modern form.
 This tension can be illustrated with the concept of cohomology.
@@ -11,10 +11,10 @@ Yet, it is not easy to show that a continuous map of spaces induces a map betwee
 The functoriality just alluded to is trivial when defining cohomology in terms of homotopy classes of maps to Eilenberg--MacLane spaces, but the passage to the homotopy category erases geometric and combinatorial information and the resulting definition is not well suited for concretely presented spaces.
 The tension this example illustrates manifests itself in many other important contexts, and the trade-off between concreteness and functoriality remains as central today as it was almost a century ago.
 
-A unifying goal of my research is to ease this tension by developing concrete constructions of concepts defined only abstractly or axiomatically and, by doing so, allowing for the application of some of the central ideas of algebraic topology in novel contexts, notably in applied mathematics and lattice field theory.
-A concept I have explored from this viewpoint extensively and for which I have provided applications in category theory, manifold topology, and data analysis is commutativity up to coherent homotopies, a notion I now motivate.
+A unifying goal of my research is to ease this tension by developing concrete constructions of concepts defined only abstractly or axiomatically and, by doing so, allowing for the application of some of the central ideas of algebraic topology in novel contexts, most notably in data analysis and topological field theory.
+A concept I have explored from this viewpoint extensively is commutativity up to coherent homotopies, a notion I now motivate.
 
-A principal goal of algebraic topology, if not its \emph{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the study of topological properties quantitatively.
+A principal goal of algebraic topology, if not its \emph{raison d'\^{e}tre}, is to encode the theory of topological spaces up to some specified notion of equivalence in terms of combinatorial or algebraic objects, allowing for the study of their properties quantitatively.
 I will focus on spaces up to weak homotopy equivalence, where a first example of an algebraization procedure is provided by the functor of simplicial or cubical cochains.
 This construction may be thought of as a linearization of spaces and, as expected, it losses much structure.
 For example, the cohomology groups of $\mathbb{C} P^2$ and $S^2 \vee S^4$, the union of a $2$- and a $4$-sphere over a point, are isomorphic despite these spaces not being equivalent.
@@ -22,23 +22,31 @@ More information can be encoded on the quasi-isomorphism type of the cochain com
 This makes its cohomology into a natural commutative ring.
 In our example, $\mathbb{C} P^2$ and $S^2 \vee S^4$ are indeed distinguished by their cohomology rings.
 However, this invariant has noticeable limitations.
-For example, the cohomology ring of the spaces $\Sigma(\mathbb{C} P^2)$ and $\Sigma(S^2 \vee S^4)$ are isomorphic, where $\Sigma$ denotes the suspension construction illustrated in the case of a circle by:
-\begin{center}
-	\includegraphics[scale=.2]{aux/suspension.pdf}
-\end{center}
+For example, taking the suspension of these leads to two non-homotopic spaces $\Sigma(\mathbb{C} P^2)$ and $\Sigma(S^2 \vee S^4)$ whose cohomologies are isomorphic as graded rings.
+%\begin{center}
+%	\includegraphics[scale=.2]{aux/suspension.pdf}
+%\end{center}
 Further structure on cohomology can be used to distinguish them.
-For example, Steenrod operations in the mod $p$ cohomology of spaces, which together with the Bockstein homomorphism provide a complete description of the mod $p$ cohomology functor.
+For example, Steenrod operations in the mod $p$ cohomology of spaces, which together with the Bockstein homomorphism provide a complete account of the mod $p$ cohomology functor.
 To define said operations, one constructs a coherent family of homotopies correcting the broken commutativity of the cochain level product.
-The existence of such ``derived commutativity'' structure can be argued indirectly, but this provides no concrete method for computation of the associated invariants, and misses the rich geometric and combinatorial structure that an effective construction provides.
+This ``derived commutativity structure'' fully faithfully encodes the entire homotopy type of spaces with certain finiteness conditions.
+Its existence can be argued indirectly, but this misses the rich geometric and combinatorial structures that an effective construction unveils, and provides no method for the computation of the associated invariants for concretely presented spaces.
 
-I will overview in \cref{s:past} the significance of these homotopy coherent structures and my contributions to this and other areas of algebraic and computational topology.
-I will devote \cref{s:future} to discussing my future research plans including the following six long term programs.
+\section*{Organization}
 
-\begin{enumerate}
-	\item Geometric cohomology and higher structures (\cref{ss:geometric cohomology}),
-	\item Explicit formulae for rational homotopy theory (\cref{ss:lie models}),
-	\item Higher diagonals of polytopes and $n$-category theory (\cref{ss:polytopes}),
-	\item Steenrod operations on Khovanov homology (\cref{ss:odd prime steenrod operations}),
-	\item Finer invariants of persistent homology (\cref{ss:ai}),
-	\item Lattice field theories and effective topology (\cref{ss:spt phases}).
-\end{enumerate}
+I overview in \cref{s:past} the significance of these homotopy coherent structures and my contributions to this and other areas of mathematics, including topological data analysis, higher category theory, functional analysis, and information theory.
+I devote \cref{s:current} to discussing research projects that I am currently pursuing with impact in convex geometry, topological field theories, and knot theory.
+I conclude by presenting in \cref{s:future} an overview of the two application domains in the title: data analysis and field theories, and how my work will continue making contributions to them.
+
+%\tableofcontents
+%I will overview in \cref{s:past} the significance of these homotopy coherent structures and my contributions to this and other areas of algebraic and computational topology.
+%I will devote \cref{s:future} to discussing my future research plans including the following six long term programs.
+%
+%\begin{enumerate}
+%	\item Geometric cohomology and higher structures (\cref{ss:geometric cohomology}),
+%	\item Explicit formulae for rational homotopy theory (\cref{ss:lie models}),
+%	\item Higher diagonals of polytopes and $n$-category theory (\cref{ss:polytopes}),
+%	\item Steenrod operations on Khovanov homology (\cref{ss:odd prime steenrod operations}),
+%	\item Finer invariants of persistent homology (\cref{ss:ai}),
+%	\item Lattice field theories and effective topology (\cref{ss:spt phases}).
+%\end{enumerate}
