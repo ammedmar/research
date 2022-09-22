@@ -1,5 +1,3 @@
-% !TEX root = ../theoretical.tex
-
 \section{Previous work} \label{s:past}
 
 \subsection{Steenrod cup-$i$ construction} \label{ss:cup-i}
@@ -24,20 +22,19 @@ In \cite{medina2023fast_sq}, I introduced new formulas defining cup-$i$ coproduc
 
 Persistent homology is a central tool in the rapidly growing field of topological data analysis.
 We used the new description of the cup-$i$ products and associated algorithm for the computation of Steenrod squares to effectively incorporate into the persistence pipeline the finer information encoded by these cohomology operations.
-With other members of \giottoTDA's team (\cref{ss:giotto}) we develop a high-performance implementation of these methods in the package \texttt{steenroder}, which we have used to identify fine topological features of real-world data \cite{medina2022per_st}.
+With other members of \giottoTDA's team (\cref{ss:giotto}) we develop a high-performance implementation of these methods in the package \href{https://steenroder.github.io/steenroder/}{\texttt{steenroder}}, which we have used to identify fine topological features of real-world data \cite{medina2022per_st}.
 
 \subsection{Topological data analysis and machine learning} \label{ss:giotto}
 
-I am part of the team that develops the open-source software \texttt{giotto-tda}, a \texttt{Python} library that integrates high-performance topological data analysis with machine learning via a \emph{scikit-learn}--compatible API and state-of-the-art \texttt{C++} implementations \cite{medina2021giotto}.
+I am part of the team that develops the open-source software \href{https://giotto-ai.github.io/gtda-docs/latest/library.html}{\texttt{giotto-tda}}, a \texttt{Python} library that integrates high-performance topological data analysis with machine learning via a \emph{scikit-learn}--compatible API and state-of-the-art \texttt{C++} implementations \cite{medina2021giotto}.
 We are adding to this versatile multi-task package the functionalities of \texttt{steenroder}, making easier to machine learning practitioner to use the above enhancements of the traditional barcode.
-The \giottoTDA\ project is the result of a public-private partnership between the \href{https://www.epfl.ch/labs/hessbellwald-lab/}{\textit{Laboratory for Topology and Neuroscience}} at EPFL, the machine learning company \href{https://www.l2f.ch/}{\textit{L2F SA}}, and the \href{https://heig-vd.ch/en/research/reds}{\textit{Institute of Reconfigurable \& Embedded Digital Systems}} of HEIG-VD.
+The \giottoTDA\ project is the result of a public-private partnership supported by the Suisse innovation agency Innosuisse.
 
 \subsection{Axioms}
 
-In principle, the cup-$i$ coproducts introduced by Steenrod and those of \cite{medina2023fast_sq} are only homotopic.
-Yet, they happen to be isomorphic.
-This is also true of all other known cup-$i$ constructions as consequence of the following result.
-In \cite{medina2022axiomatic}, I showed that similarly to how Steenrod squares operations can be characterized axiomatically, any collection of higher products realizing the ``derived commutativity" of the mod $2$ cohomology algebra is isomorphic to Steenrod's if it satisfies certain natural axioms.
+The formulas introduced by Steenrod and the author give rise to homotopic cup-$i$ coproducts, yet the question of there exact agreement remained open.
+In \cite{medina2022axiomatic}, I showed that similarly to how Steenrod squares can be characterized axiomatically, the cup-$i$ products can be as well.
+I used this framework to show that all cup-$i$ products in the literature are equal to Steenrod's original.
 
 \subsection{Nerve of higher categories} \label{ss:nerve}
 
@@ -50,9 +47,9 @@ These $n$-categories are regarded as ``fundamental structures of nature" (\cite{
 
 \subsection{Cartan} \label{ss:cartan}
 
-Steenrod squares $Sq^k$ and the algebra structure on cohomology are related via the Cartan formula
+Steenrod squares $\Sq^k$ and the algebra structure on cohomology are related via the Cartan formula
 \begin{equation*}
-Sq^k(\alpha \beta) = \sum_{i+j=k} Sq^i(\alpha) Sq^j(\beta).
+\Sq^k(\alpha \beta) = \sum_{i+j=k} \Sq^i(\alpha) \Sq^j(\beta).
 \end{equation*}
 Since both of these structures are induced from the cup-$i$ products it is natural to wonder if a proof at the cochain level can be given, ideally one that constructs a cochain whose coboundary is the difference between cochains representing the relation.
 This is what I did in \cite{medina2020cartan}.
@@ -62,48 +59,33 @@ More on the connection to physics in (\cref{ss:spt phases}).
 
 \subsection{Adem} \label{ss:adem}
 
-The iteration of the $Sq^k$ operations satisfy the Adem relations
+The iteration of the $\Sq^k$ operations satisfy the Adem relations
 \begin{equation*}
-Sq^i Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} Sq^{i+j-k} Sq^k(\alpha)
+\Sq^i \Sq^j(\alpha) = \sum_{k=0}^{\lfloor i/2 \rfloor} \binom{j-k-1}{i-2k} \Sq^{i+j-k} \Sq^k(\alpha)
 \end{equation*}
 for all $i,j > 0$ such that $i < 2j$.
 These relations play an important role in the definition of secondary cohomology operations and $\kappa$-invariants of Postnikov towers.
-In joint work with G. Brumfiel and J. Morgan \cite{medina2021adem} we provided a construction of cochains enforcing these relations in the same spirit as those I constructed for the Cartan relation.
+In joint work with G. Brumfiel and J. Morgan \cite{medina2021adem} we provided a construction of cochains enforcing these relations in the same spirit as those discussed in \cref{ss:cartan}.
 
-\subsection{Ranicki--Weiss Assembly}
+\subsection{Ranicki--Weiss assembly}
 
-In \cite{medina2022assembly}, I considered the assembly functor of Ranicki--Weiss \cite{ranicki1990assembly} from chain complex valued presheaves on a simplicial complex $X$ to chain complexes, which can be extended to the L-theory assembly functors of \cite{ranicki1992topological} by considering chain complexes with derived Poincar\'e duality.
+In \cite{medina2022assembly}, I consider the assembly functor of Ranicki--Weiss \cite{ranicki1990assembly} from chain complex valued presheaves on a simplicial complex $X$ to chain complexes, which can be extended to the L-theory assembly functors of \cite{ranicki1992topological} by considering chain complexes with derived Poincar\'e duality.
 Ranicki and Weiss showed that assembly lifts to a functor to comodules over the Alexander--Whitney coalgebra of $X$.
-In this paper, I showed that assembly lifts to comodules over the Steenrod cup-$i$ coalgebra of $X$ and, more importantly, that this lift is fully faithful.
-
-%\subsection{Algebraic representations}
-%
-%In \cite{medina2020globular}, I constructed a functor from globular sets, a higher dimensional generalization of directed graphs, to coalgebras with higher coproducts proving it defines a full and faithful embedding.
-%This result was inspired by my thesis, where I did the same for simplicial complexes and proved additionally that the category of representations of the poset of simplices, i.e., functors from this category to chain complexes, embeds fully faithfully into the category of comodules over the associated coalgebra with higher coproducts.
-%This result allowed me to reinterpret the total surgery obstruction of Ranicki \cite{ranicki1992topological} in terms of cobordism classes of these comodules enriched with a derived notion of duality \cite{medina2015thesis}.
-
-%As mentioned in \cref{fast_sq}, Steenrod introduced his square operations in the mod~2 cohomology of spaces via explicit formulas for cup-$i$ products of cochain.
-%Indirectly, these operations can be defined using the mod~2 homology of the symmetric group $\sym_2$ and have analogues for any prime $p$ using the mod~$p$ homology of $\sym_p$.
-%Using work by May one can unify these constructions integrally using $E_\infty$-algebras, but no formulas were known analogous to the cup-$i$ products for odd Steenrod operations.
-%In this paper we present such formulas for algebras over certain models of the $E_\infty$-operad, and derive from them cup-$(p,i)$ products for simplicial and, using work described in \cref{cube_einfty}, also cubical sets.
+In this paper, I show that assembly lifts to comodules over the Steenrod cup-$i$ coalgebra of $X$ and, more importantly, that this lift is fully faithful.
 
 \subsection{Steenrod operations} \label{ss:may steenrod}
 
 So far we have focused on operations in mod 2 cohomology.
 The definition of Steenrod operations for odd primes was given in non-constructive terms using the homology of symmetric groups, and analogues of the cup-$i$ products were missing from the literature.
 In \cite{medina2021may_st}, using the operadic viewpoint of May, we introduced --~for any prime $p$~-- cup-$(p,i)$ products defining constructively all Steenrod operations for simplicial and, using work described in \cref{ss:e-infty structures}, also cubical sets.
-These constructions are explicit enough that I implemented them in the computer algebra system \texttt{comch} \cite{medina2021comch}, an open source project I develop to manipulate models of the $E_\infty$-operad, a concept I now describe.
-
-%\subsection{C.A.S. \texttt{ComCH}}
-%
-%I wrote the specialized computer algebra system \texttt{ComCH} to study and manipulate combinatorial models of the $E_\infty$-operad and their action on cellular (co)chains \cite{medina2021comch}.
-%To date, this lightweight \texttt{Python} project models the Barratt-Eccles and surjection operads \cite{mcclure2003multivariable,berger2004combinatorial}, and implements Steenrod cup-$(p,i)$ products for simplicial and cubical sets as defined in \cite{medina2021may_st}.
+These constructions are explicit enough that I implemented them in the computer algebra system \href{https://comch.readthedocs.io/en/latest/}{\texttt{comch}} \cite{medina2021comch}, an open source project I develop to manipulate models of the $E_\infty$-operad, a concept I now describe.
 
 \subsection{\pdfEinfty-operads}
 
 The cup-$i$ products are part of a more general structure known as an \textit{$E_\infty$-algebra}, a notion controlled by so called \textit{$E_\infty$-operads}.
-The study of $E_\infty$-structures has a long history, where (co)homology operations, the recognition of infinite loop spaces, and the complete algebraic representation of the $p$-adic homotopy category are key milestones.
-No finitely presented $E_\infty$-operad can exist but, as I showed in \cite{medina2020prop1,medina2021prop2}, passing to the context of multiple inputs and outputs allows for the introduction of props whose associated operads are $E_\infty$.
+After work of M. Mandell, it is known that the $E_\infty$-algebra of a space satisfying suitable finiteness conditions encodes its entire homotopy type.
+%The study of $E_\infty$-structures has a long history, where (co)homology operations, the recognition of infinite loop spaces, and the complete algebraic representation of the $p$-adic homotopy category are key milestones.
+No finitely presented $E_\infty$-operad can exist but, as I show in \cite{medina2020prop1,medina2021prop2}, passing to the context of multiple inputs and outputs allows for the introduction of props whose associated operads are $E_\infty$.
 I related my models in the categories of chains complexes and CW-spaces to $E_\infty$-operads previously defined by McClure--Smith, Berger--Fresse and R.~Kaufmann, and used these comparisons to establish a conjecture of the latter.
 
 \subsection{\pdfEinfty-structures} \label{ss:e-infty structures}
@@ -122,7 +104,7 @@ With M. Rivera in \cite{medina2021cobar}, we used my model of the $E_\infty$-ope
 
 For these spaces, an $E_\infty$-structure can be thought of as arising from coherently correcting up to homotopies the broken symmetry of the diagonal.
 When this is done over the rationals, one obtains the notion of $C_\infty$-coalgebra which controls rational homotopy theory.
-In \cite{medina2022dennis}, written in the occasion of Dennis Sullivan's $80^\th$ birthday, I presented a survey of effective algebraic constructions and open problems in the theory of $C_\infty$ and $E_\infty$-structures on cellular spaces.
+In \cite{medina2022dennis}, written in the occasion of Dennis Sullivan's $80^\th$ birthday, I present a survey of effective algebraic constructions and open problems in the theory of $C_\infty$ and $E_\infty$-structures on cellular spaces.
 
 \subsection{Flowing from intersection product to cup product} \label{ss:flowing}
 
