@@ -11,12 +11,10 @@ Designing reliable AI systems is a multi-faceted challenge and homotopical algeb
 	\item Generalizability to unseen data: large models can overfit the data they are trained on and thus fail to generalize to data in deployment.
 \end{itemize}
 Traditional regularizers, one of the primary tools used to tackle the above challenges, impose penalties on representations that exhibit undesirable properties such as exploding gradients or highly complicated geometric structures.
-By studying the topology of the weight space and decision boundaries of trained models, we will validate on real-world data the assumption that robustness is linked to less cumbersome topologies.
-This will enable to create performant topological regularizers that improve the resilience and generalization power of new models.
+By studying the topology of the weight space and decision boundaries of trained models, this research will validate on real-world data the assumption that robustness is linked to less cumbersome topologies; enabling the creation of performant topological regularizers that improve the resilience and generalization power of new models.
 
-To quantify the topological complexity of these spaces and device such regularization procedures, developments from the sub-field of homotopical algebraic data analysis, such as Steenrod persistence modules, are fundamental.
-Together with part of \giottoTDA's team, we will continue to develop -- at all stages from theory and algorithms to implementation and deployment -- novel homotopical invariants that can be used for these and similar challenges.
-International collaborations are also envision, in particular, with the Laboratory for Topology and Neuroscience at EPFL, where as a member I wrote the mathematical content of a grant on this topic awarded for over 1 million USD.
+To quantify the topological complexity of these spaces and device such regularization procedures, developments from homotopical algebra need be made effective, as done for Betti numbers and Steenrod squares which lead to the usual and Steenrod barcodes.
+Together with members of \giottoTDA's team and other collaborators, the author will continue to develop -- at all stages from theory and algorithms to implementation and deployment -- novel homotopical invariants that can be used for these and similar challenges.
 
 \subsection{Symmetry protected topological phases and cochain constructions} \label{ss:spt phases}
 
@@ -25,13 +23,16 @@ In condensed matter physics, quantum systems are presented using \textit{lattice
 We think of these as defined on flat space.
 One such system is said to be \textit{gapped} if the spectrum of the Hamiltonian is bounded away from $0$, and two Hamiltonians represent the same \textit{phase} if there exists a deformation between them consisting only of systems that remain bounded from below.
 
-Given a lattice model, using cellular decompositions and state sum type constructions one can often compute the corresponding \textit{partition functions} on spacetime manifolds from actions expressed in terms of gauge fields represented by cochains and cochain level structures: Stiefel--Whitney cochains, cup-$(p, i)$ products (\cref{ss:cup-i}, \cref{ss:may steenrod}) and Cartan/Adem coboundaries (\cref{ss:cartan}, \cref{ss:adem}) among others.
+Given a lattice model, by means of cellular decompositions and state sum type constructions, one can often compute the associated \textit{partition functions} on spacetime manifolds.
+The fields and actions been expressed using cochain level structure, for example, Stiefel--Whitney cochains, cup-$i$ products and Adem coboundaries.
 Subdivision invariance gives rise to a functorial TQFT, which in the \textit{invertible} case is expected to be controlled by a generalized cohomology theory.
 The cochain level structure used in the definition of the cellular gauge theory is interpreted from this point of view as describing a cochain model of the Postnikov tower of the relevant spectrum.
 For example, fermionic phases protected by a $G$-symmetry are believed to be classified by applying to $BG$ the Pontryagin dual of spin bordism.
-Building on these insights and using a formula of mine \cite{medina2020cartan}, A.~Kapustin proposed a structural ansatz in low dimensions that G. Brumfiel and J. Morgan verified by constructing cochain models of certain connective covers of said spectrum.
+Building on these insights and using a formula introduced in \cite{medina2020cartan}, A.~Kapustin proposed a structural ansatz in low dimensions that G. Brumfiel and J. Morgan verified by constructing cochain models of certain connective covers of said spectrum.
 
-In the future, with my collaborators we will continue deepening the understanding of the discrete and algebraic structures underpinning SPT phases, with the ultimate goal of elucidating the effects in physiscs of developing, alongside the functorial approach to stable homotopy theory, the effective one as well.
+In the future, the research program presented here will continue deepening the understanding of the discrete and algebraic structures underpinning SPT phases, with the ultimate goal of elucidating the physics content of the complementary viewpoints provided in stable homotopy theory by functorial and effective constructions.
+
+%of developing, alongside the functorial approach to stable homotopy theory, the effective one as well.
 
 %between discrete models, stable homotopy theory, topological field theories.
 %This is a long term project, but a first concrete objective is the description of the signature of 4 manifolds through a combinatorial local state sum formula.
